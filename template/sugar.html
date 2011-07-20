@@ -305,6 +305,7 @@
                         <code>k</code> (katakana), <code>s</code> (spaces), <code>p</code>
                         (punctuation), or <code>all</code>.
                     </li>
+                </ul>
             </section>
         </div>
 
@@ -314,7 +315,152 @@
                 <h1>Components: Number Methods</h1>
             </header>
             <section>
-
+                <ul>
+                    <li>
+                        <code>Number.random(n1, n2)</code>
+                        Returns a random integer between <code>n1</code> and <code>n2</code>.
+                        If only 1 number is passed, the other will be 0.
+                        If none are passed, the number will be either 0 or 1.
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        Returns the absolute value for the number.
+                    </li>
+                    <li>
+                        <code>ceil(precision = 0)</code>
+                        Rounds the number up. Will round to the given <code>precision</code>.
+                    </li>
+                    <li>
+                        <code>chr()</code>
+                        Returns a string at the code point of the number.
+                    </li>
+                    <li>
+                        <code>days()</code>
+                        Takes an integer as days and returns milliseconds.
+                        
+                        Similar handling also applies to <code>hours()</code>,
+                        <code>milliseconds()</code>, <code>minutes()</code>,
+                        <code>months</code>, <code>seconds()</code>, <code>weeks()</code>,
+                        and <code>years()</code>.
+                    </li>
+                    <li>
+                        <code>daysAfter(d)</code>
+                        Returns a date <em>n</em> days after <code>d</code>,
+                        where <em>n</em> is the integer. <code>d</code> will
+                        accept a date object, timestamp, text format, <code>dayAfter()</code>,
+                        or <code>dayFromNow()</code>. <code>d</code> defaults to <em>now</em>.
+                        
+                        Similar handling also applies to <code>hoursAfter()</code>,
+                        <code>millisecondsAfter()</code>, <code>minutesAfter()</code>,
+                        <code>monthsAfter</code>, <code>secondsAfter()</code>, <code>weeksAfter()</code>,
+                        and <code>yearsAfter()</code>.
+                    </li>
+                    <li>
+                        <code>daysAgo()</code>
+                        Alias for <code>daysBefore()</code>.
+                        
+                        Similar handling also applies to <code>hoursAgo()</code>,
+                        <code>millisecondsAgo()</code>, <code>minutesAgo()</code>,
+                        <code>monthsAgo</code>, <code>secondsAgo()</code>, <code>weeksAgo()</code>,
+                        and <code>yearsAgo()</code>.
+                        
+                        These similar functions also have similar aliases of the form
+                        <em>[timeframe]Before()</code>, i.e. <code>hoursBefore()</code>,
+                        <code>millisecondsBefore()</code>, <code>minutesBefore()</code>,
+                        <code>monthsBefore</code>, <code>secondsBefore()</code>, <code>weeksBefore()</code>,
+                        and <code>yearsBefore()</code>.
+                    </li>
+                    <li>
+                        <code>daysBefore(d)</code>
+                        Returns a date <em>n</em> days after <code>d</code>,
+                        where <em>n</em> is the integer. <code>d</code> will
+                        accept a date object, timestamp, text format, <code>dayAfter()</code>,
+                        or <code>dayFromNow()</code>. <code>d</code> defaults to <em>now</em>.
+                        
+                        Similar handling also applies to <code>hoursBefore()</code>,
+                        <code>millisecondsBefore()</code>, <code>minutesBefore()</code>,
+                        <code>monthsBefore</code>, <code>secondsBefore()</code>, <code>weeksBefore()</code>,
+                        and <code>yearsBefore()</code>.
+                    </li>
+                    <li>
+                        <code>daysFromNow(d)</code>
+                        Alias for <code>daysAfter()</code>.
+                        
+                        Similar handling also applies to <code>hoursFromNow()</code>,
+                        <code>millisecondsFromNow()</code>, <code>minutesFromNow()</code>,
+                        <code>monthsFromNow</code>, <code>secondsFromNow()</code>, <code>weeksFromNow()</code>,
+                        and <code>yearsFromNow()</code>.
+                        
+                        These similar functions also have similar aliases of the form
+                        <em>[timeframe]After()</code>, i.e. <code>hoursAfter()</code>,
+                        <code>millisecondsAfter()</code>, <code>minutesAfter()</code>,
+                        <code>monthsAfter</code>, <code>secondsAfter()</code>, <code>weeksAfter()</code>,
+                        and <code>yearsAfter()</code>.
+                    </li>
+                    <li>
+                        <code>downto(num, func)</code>
+                        Returns an array containing numbers from the number down to
+                        <code>num</code>. Optionally calls <code>fn</code> callback
+                        for each number in that array.
+                    </li>
+                    <li>
+                        <code>floor(precision = 0)</code>
+                        Rounds the number down. <code>precision</code> will round to the given precision.
+                    </li>
+                    <li>
+                        <code>format(comma, period)</code>
+                        Formats the number to a readable string. <code>comma</code>
+                        is the character used for the thousands separator.
+                        <code>period</code> is the character used for the decimal point.
+                    </li>
+                    <li>
+                        <code>hex()</code>
+                        Converts the number to hexidecimal.
+                    </li>
+                    <li>
+                        <code>isEven()</code>
+                        Returns true if the number is even.
+                    </li>
+                    <li>
+                        <code>isMultipleOf(num)</code>
+                        Returns true if the number is a multiple of <code>num</code>.
+                    </li>
+                    <li>
+                        <code>isOdd()</code>
+                        Returns true if the number is odd.
+                    </li>
+                    <li>
+                        <code>ordinalize()</code>
+                        Returns an ordinalized (English) string, i.e. "1st", "2nd", etc.
+                    </li>
+                    <li>
+                        <code>pad(place = 0, sign = false)</code>
+                        Pads a number with "0" to <code>place</code>. <code>sign</code>
+                        allows you to force the sign as well (+05, etc).
+                    </li>
+                    <li>
+                        <code>pow(p = 1)</code>
+                        Returns the number to the power of <code>p</code>.
+                    </li>
+                    <li>
+                        <code>round(precision = 0)</code>
+                        Rounds a number to the precision of <code>precision</code>.
+                    </li>
+                    <li>
+                        <code>times(n)</code>
+                        Calls <code>fn</code> a number of times equivalent to the number.
+                    </li>
+                    <li>
+                        <code>toNumber()</code>
+                        Returns a number. This is mostly for compatibility reasons.
+                    </li>
+                    <li>
+                        <code>upto(num, fn)</code>
+                        Returns an array containing numbers from the number up to
+                        <code>num</code>. Optionally calls <code>fn</code> callback
+                        for each number in that array.
+                    </li>
+                </ul>
             </section>
         </div>
 
@@ -324,7 +470,331 @@
                 <h1>Components: Array Methods</h1>
             </header>
             <section>
-
+                <ul>
+                    <li>
+                        <code>underscore()</code>
+                        Converts hyphens and camel casing to underscores.
+                    </li>
+ <li>
+                        <code>add(el, index)</code>
+                        Adds <code>el</code> to the array. If <code>index</code>
+                        is specified, it will add at <code>index</code>, otherwise
+                        adds to the end of the array. Behaves like concat in that
+                        if <code>el</code> is an array it will be joined, not inserted.
+                        This method will change the array! <em>Use include for a non-destructive alias.</em>
+                    </li>
+                    <li>
+                        <code>all()</code>
+                        Alias for <code>every()</code>.
+                    </li>
+                    <li>
+                        <code>any()</code>
+                        Alias for <code>some()</code>.
+                    </li>
+                    <li>
+                        <code>at(index, loop = true)</code>
+                        Gets the element(s) at the given <code>index</code>. When
+                        <code>loop</code> is true, overshooting the end of the array
+                        (or the beginning) will begin counting from the other end.
+                        Also accepts passing multiple indexes will get the
+                        elements at those indexes. Returns <em>mixed</em>.
+                    </li>
+                    <li>
+                        <code>average(map)</code>
+                        Averages all values in the array. <code>map</code> may be a
+                        function mapping the value to be averaged or a string acting
+                        as a shortcut.
+                    </li>
+                    <li>
+                        <code>clone()</code>
+                        Clones the array.
+                    </li>
+                    <li>
+                        <code>collect()</code>
+                        Alias for <code>map()</code>.
+                    </li>
+                    <li>
+                        <code>compact()</code>
+                        Removes all instances of <code>undefined</code>, <code>null</code>,
+                        and <code>NaN</code> from the array. Empty strings and
+                        <code>false</code> are left untouched.
+                    </li>
+                    <li>
+                        <code>count(f)</code>
+                        Counts all elements in the array that match <code>f</code>.
+                        <code>f</code> will match a string, number, array, object,
+                        or alternately test against a function or regex.
+                    </li>
+                    <li>
+                        <code>each()</code>
+                        Alias for <code>forEach()</code>.
+                    </li>
+                    <li>
+                        <code>eachFromFunction(index, fn, loop = false)</code>
+                        Runs <code>fn</code> against elements in the array starting
+                        at <code>index</code>. Will run a full loop starting over
+                        at index = 0 if <code>loop</code> is true.
+                        
+                    </li>
+                    <li>
+                        <code>every(f, scope)</code>
+                        Returns true if all elements in the array match <code>f</code>.
+                        <code>scope</code> is the <code>this</code> object. In addition to providing this
+                        method for browsers that don't support it natively, this
+                        enhanced method also directly accepts strings, numbers,
+                        deep objects, and arrays for <code>f</code>. <code>all()</code> provided
+                        as an alias.
+                    </li>
+                    <li>
+                        <code>exclude(f)</code>
+                        Removes any element in the array that matches <code>f</code>. This is a
+                        non-destructive alias for <code>remove()</code>. It will not change the
+                        original array.
+                    </li>
+                    <li>
+                        <code>filter(f, scope)</code>
+                        Returns any elements in the array that match <code>f</code>.
+                        <code>scope</code> is the <code>this</code> object. In addition to providing this
+                        method for browsers that don't support it natively, this
+                        enhanced method also directly accepts strings, numbers,
+                        deep objects, and arrays for <code>f</code>.
+                    </li>
+                    <li>
+                        <code>find(f, index = 0, scope = false)</code>
+                        Returns the first element that matches <code>f</code>. <code>f</code> will match a
+                        string, number, array, object, or alternately test against a
+                        function or regex. Starts at <code>index</code>, and will continue from
+                        index = 0 if <code>loop</code> is true.
+                    </li>
+                    <li>
+                        <code>findAll(f, index = 0, scope = false)</code>
+                        Returns all elements that match <code>f</code>. <code>f</code> will match a
+                        string, number, array, object, or alternately test against a
+                        function or regex. Starts at <code>index</code>, and will continue from
+                        index = 0 if <code>loop</code> is true.
+                    </li>
+                    <li>
+                        <code>first(num = 1)</code>
+                        Returns the first element(s) in the array. When <code>num</code> is passed,
+                        returns the first <code>num</code> elements in the array.
+                    </li>
+                    <li>
+                        <code>flatten()</code>
+                        Returns a flattened, one-dimensional copy of the array.
+                    </li>
+                    <li>
+                        <code>forEach(fn, scope)</code>
+                        Iterates over the array, calling <code>fn</code> on each loop.
+                        <code>scope</code> becomes the this object. <code>each()</code>
+                        is provided as an alias. <em>This method is only provided for
+                        those browsers that do not support it natively.</em>
+                    </li>
+                    <li>
+                        <code>from(index)</code>
+                        Returns a slice of the array from <code>index</code>.
+                    </li>
+                    <li>
+                        <code>groupBy(property)</code>
+                        Groups the array by <code>property</code>. Will return an object with
+                        keys equal to the grouped values. <code>property</code> may be a mapping
+                        function, or a string acting as a shortcut.
+                    </li>
+                    <li>
+                        <code>has()</code>
+                        Alias for <code>some()</code>
+                    </li>
+                    <li>
+                        <code>inGroups(num, padding)</code>
+                        Groups the array into <code>num</code> arrays. <code>padding</code> specifies a
+                        value with which to pad the last array so that they are
+                        all equal length.
+                    </li>
+                    <li>
+                        <code>inGroupsOf(num, padding = null)</code>
+                        Groups the array into arrays of <code>num</code> elements each. <code>padding</code>
+                        specifies a value with which to pad the last array so that
+                        they are all equal length.
+                    </li>
+                    <li>
+                        <code>include(el, index)</code>
+                        Adds <code>el</code> to the array. This is a non-destructive alias for
+                        <code>add()</code>. It will not change the original array.
+                    </li>
+                    <li>
+                        <code>indexOf(f, offset)</code>
+                        Searches the array and returns the first index where <code>f</code>
+                        occurs, or -1 if the element is not found. <code>offset</code> is the
+                        index from which to begin the search. In addition to
+                        providing this method for browsers that don't support it
+                        natively, this enhanced method can also perform deep finds
+                        on objects or arrays, and accept an iterating function on
+                        which to perform the search.
+                    </li>
+                    <li>
+                        <code>insert()</code>
+                        Alias for <code>add()</code>.
+                    </li>
+                    <li>
+                        <code>intersect(a)</code>
+                        Returns an array containing the elements both arrays have in common.
+                    </li>
+                    <li>
+                        <code>isEmpty()</code>
+                        Returns true if the array is empty. This is true if the
+                        array has a length of zero, or contains only
+                        <code>undefined</code>, <code>null</code>, or <code>NaN</code>.
+                    </li>
+                    <li>
+                        <code>last()</code>
+                        Returns the last element(s) in the array. When <code>num</code> is passed,
+                        returns the last num elements in the array.
+                    </li>
+                    <li>
+                        <code>lastIndexOf(f, offset)</code>
+                        Searches the array and returns the last index where <code>f</code>
+                        occurs, or -1 if the element is not found. <code>offset</code> is the
+                        index from which to begin the search. In addition to
+                        providing this method for browsers that don't support it
+                        natively, this enhanced method can also perform deep finds
+                        on objects or arrays, and accept an iterating function on
+                        which to perform the search.
+                    </li>
+                    <li>
+                        <code>least(map)</code>
+                        Returns the elements in the array with the least commonly
+                        occuring value. <code>map</code> may be a function mapping
+                        the value to be checked or a string acting as a shortcut.
+                    </li>
+                    <li>
+                        <code>map(fn, scope)</code>
+                        Maps the array to another array containing the values that
+                        are the result of calling <code>fn</code> on each element. <code>scope</code> is the
+                        this object. In addition to providing this method for
+                        browsers that don't support it natively, this enhanced
+                        method also directly accepts a string, which is a shortcut
+                        for a function that gets that property on each element.
+                        <code>collect()</code> is provided as an alias.
+                    </li>
+                    <li>
+                        <code>max(map)</code>
+                        Returns the elements in the array with the greatest value.
+                        <code>map</code> may be a function mapping the value to be checked or a
+                        string acting as a shortcut.
+                    </li>
+                    <li>
+                        <code>min(map)</code>
+                        Returns the elements in the array with the lowest value.
+                        <code>map</code> may be a function mapping the value to be
+                        checked or a string acting as a shortcut.
+                    </li>
+                    <li>
+                        <code>most(map)</code>
+                        Returns the elements in the array with the most commonly
+                        occuring value. <code>map</code> may be a function mapping the value to
+                        be checked or a string acting as a shortcut.
+                    </li>
+                    <li>
+                        <code>none(f)</code>
+                        Returns true if none of the elements in the array match <code>f</code>.
+                        <code>f</code> will match a string, number, array, object, or
+                        alternately test against a function or regex.
+                    </li>
+                    <li>
+                        <code>randomize()</code>
+                        Randomizes the array. 
+                    </li>
+                    <li>
+                        <code>reduce(fn, init)</code>
+                        Reduces the array to a single result. By default this method
+                        calls <code>fn</code> <em>n - 1</em> times, where n is the length of the array.
+                        On the first call it is passed the first and second elements
+                        in the array. The result of that callback will then be passed
+                        into the next iteration until it reaches the end, where the
+                        accumulated value will be returned as the final result. If
+                        <code>init</code> is passed, it will call <code>fn</code> one extra time in the
+                        beginning passing in <code>init</code> along with the first element.
+                        This method is only provided for those browsers that do
+                        not support it natively.
+                    </li>
+                    <li>
+                        <code>reduceRight(fn, init)</code>
+                        Reduces the array to a single result by stepping through it
+                        from the right. By default this method calls <code>fn</code> <em>n - 1</em> times,
+                        where n is the length of the array. On the first call it is
+                        passed the last and second to last elements in the array. The
+                        result of that callback will then be passed into the next
+                        iteration until it reaches the beginning, where the accumulated
+                        value will be returned as the final result. If <code>init</code> is passed,
+                        it will call <code>fn</code> one extra time in the beginning passing in
+                        <code>init</code> along with the last element. This method is only provided
+                        for those browsers that do not support it natively.
+                    </li>
+                    <li>
+                        <code>remove(f)</code>
+                        Removes any element in the array that matches <code>f<c/ode>. <code>f</code> will
+                        match a string, number, array, object, or alternately test
+                        against a function or regex. This method will change the
+                        array! Use <code>exclude()</code> for a non-destructive alias.
+                    </li>
+                    <li>
+                        <code>removeAtIndex(start, end)</code>
+                        Removes element at <code>start</code>. If <code>end</code> is specified, removes the
+                        range between <code>start</code> and <code>end</code>. This method will change the
+                        array! If you don't intend the array to be changed use
+                        <code>clone</code> first.
+                    </li>
+                    <li>
+                        <code>shuffle()</code>
+                        Alias for <code>randomize()</code>.
+                    </li>
+                    <li>
+                        <code>some(fn, scope)</code>
+                        Returns true if any element in the array matches f. <code>scope</code>
+                        is the this object. In addition to providing this method for
+                        browsers that don't support it natively, this enhanced
+                        method also directly accepts strings, numbers, deep objects,
+                        and arrays for <code>f</code>. <code>any()</code> and <code>has</code>
+                        are provided as aliases.
+                    </li>
+                    <li>
+                        <code>sortBy(property, desc = false)</code>
+                        Sorts the array by <code>property</code>. <code>property</code> may be a function or
+                        a string acting as a shortcut. <code>desc</code> will sort the array in
+                        descending order.
+                    </li>
+                    <li>
+                        <code>split(f)</code>
+                        Splits the array on any element that matches <code>f</code>. <code>f</code> will match a
+                        string, number, array, object, or alternately test against
+                        a function or regex.
+                    </li>
+                    <li>
+                        <code>subtract(a)</code>
+                        Returns an array containing only the elements that do not
+                        exist in a.
+                    </li>
+                    <li>
+                        <code>sum(map)</code>
+                        Sums all values in the array. <code>map</code> may be a function mapping
+                        the value to be summed or a string acting as a shortcut.
+                    </li>
+                    <li>
+                        <code>to(index)</code>
+                        Returns a slice of the array up to <code>index</code>.
+                    </li>
+                    <li>
+                        <code>union(a)</code>
+                        Returns an array containing all elements in both arrays with duplicates removed.
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>unique()</code>
+                        Removes all duplicate elements in the array.
+                    </li>
+                </ul>
             </section>
         </div>
 
@@ -334,7 +804,239 @@
                 <h1>Components: Date Methods</h1>
             </header>
             <section>
-
+                <ul>
+                    <li>
+                        <code>Date.create(d)</code>
+                        Alternate Date constructor which understands various
+                        formats. Accepts a multitude of text formats, a timestamp,
+                        or another date as <code>d</code>. If no argument is given, date is assumed to
+                        be now. Date.create additionally can accept enumerated
+                        parameters as with the standard date constructor.
+                    </li>
+                    <li>
+                        <code>addDays(num)</code>
+                        Adds <code>num</code> days to the date.
+                        
+                        Similar handling also applies to <code>addHours()</code>,
+                        <code>addMilliseconds()</code>, <code>addMinutes()</code>,
+                        <code>addMonths()</code>, <code>addSeconds()</code>, <code>addWeeks()</code>,
+                        and <code>addYears()</code>.
+                    </li>
+                    <li>
+                        <code>advance(param)</code>
+                        Sets the date forward. <code>param</code> can accept multiple
+                        formats including a single number as a timestamp, an object,
+                        or enumerated parameters (as with the Date constructor).
+                    </li>
+                    <li>
+                        <code>beginningOfDay()</code>
+                        Sets the date to the beginning of the day.
+                        
+                        Similar handling also applies to <code>beginningOfMonth()</code>,
+                        <code>beginningOfWeek()</code>, and <code>beginningOfYear()</code>.
+                    </li>
+                    <li>
+                        <code>clone()</code>
+                        Clones the date.
+                    </li>
+                    <li>
+                        <code>daysAgo()</code>
+                        Alias for <code>daysUntil()</code>.
+                        
+                        Similar aliases exist, i.e. <code>hoursAgo()</code>,
+                        <code>millisecondsAgo()</code>, <code>minutesAgo()</code>,
+                        <code>monthsAgo()</code>, <code>secondsAgo()</code>, <code>weeksAgo()</code>,
+                        and <code>yearsAgo()</code>.
+                    </li>
+                    <li>
+                        <code>daysFromNow()</code>
+                        Alias for <code>daysSince()</code>
+                        
+                        Similar aliases exist, i.e. <code>hoursFromNow()</code>,
+                        <code>millisecondsFromNow()</code>, <code>minutesFromNow()</code>,
+                        <code>monthsFromNow()</code>, <code>secondsFromNow()</code>, <code>weeksFromNow()</code>,
+                        and <code>yearsAgo()</code>.
+                    </li>
+                    <li>
+                        <code>daysInMonth()</code>
+                        Returns the number of days in the date's month.
+                    </li>
+                    <li>
+                        <code>daysSince(d)</code>
+                        Returns the number of days since <code>d</code>.
+                        
+                        Similar handling also applies to <code>hoursSince(d)</code>,
+                        <code>millisecondsSince(d)</code>, <code>minutesSince(d)</code>,
+                        <code>monthsSince(d)</code>, <code>secondsSince(d)</code>, <code>weeksSince(d)</code>,
+                        and <code>yearsSince(d)</code>.
+                    </li>
+                    <li>
+                        <code>daysUntil(d)</code>
+                        Returns the number of days until <code>d</code>.
+                        
+                        Similar handling also applies to <code>hoursUntil(d)</code>,
+                        <code>millisecondsUntil(d)</code>, <code>minutesUntil(d)</code>,
+                        <code>monthsUntil(d)</code>, <code>secondsUntil(d)</code>, <code>weeksUntil(d)</code>,
+                        and <code>yearsUntil(d)</code>.
+                    </li>
+                    <li>
+                        <code>endOfDay()</code>
+                        Sets the date to the end of the day.
+                        
+                        Similar handling also applies to <code>endOfWeek()</code>,
+                        <code>endOfMonth()</code>, and <code>endOfYear()</code>.
+                    </li>
+                    <li>
+                        <code>format(format)</code>
+                        Formats the date for the given <code>format</code>. <code>format</code> will accept a
+                        number of tokens as well as pre-determined formats. It can
+                        also be 'relative', which will construct a relative,
+                        unit-adjusted offset to the current time. A function may
+                        also be passed here to allow more localization and more
+                        granular control. <code>relative()</code> is provided as an alias.
+                    </li>
+                    <li>
+                        <code>getUTCOffset(iso)</code>
+                        Returns a string representation of the offset from UTC time.
+                        If <code>iso</code> is true the offset will be in ISO8601 format.
+                    </li>
+                    <li>
+                        <code>getUTCWeek()</code>
+                        Gets the date's week (of the year) according to universal time.
+                    </li>
+                    <li>
+                        <code>getUTCWeekday()</code>
+                        Alias for <code>getUTCDay()</code>.
+                    </li>
+                    <li>
+                        <code>getWeek()</code>
+                        Gets the date's week (of the year).
+                    </li>
+                    <li>
+                        <code>getWeekday()</code>
+                        Alias for <code>getDay()</code>.
+                    </li>
+                    <li>
+                        <code>is(d, margin)</code>
+                        Returns true if the date is <code>d</code>. <code>margin</code> is to allow extra
+                        margin of error (in ms). <code>d</code> will accept a date object,
+                        timestamp, or text format. If not specified, <code>d</code> is assumed
+                        to be <em>now</em>. is additionally understands more generalized
+                        expressions like month/weekday names, 'today', etc. Dates
+                        will be compared to the precision implied in <code>d</code>. 
+                    </li>
+                    <li>
+                        <code>isAfter(d, margin)</code>
+                        Returns true if the date is after the <code>d</code>. <code>margin</code> is to
+                        allow extra margin of error (in ms). <code>d</code> will accept a date
+                        object, timestamp, or text format. If not specified, <code>d</code> is
+                        assumed to be <em>now</em>.
+                    </li>
+                    <li>
+                        <code>isBefore(d, margin)</code>
+                        Returns true if the date is before <code>d</code>. <code>margin</code> is to allow
+                        extra margin of error (in ms). <code>d</code> will accept a date object,
+                        timestamp, or text format. If not specified, <code>d</code> is assumed to be <em>now</em>.
+                    </li>
+                    <li>
+                        <code>isBetween(d1, d2, margin)</code>
+                        Returns true if the date falls between <code>d1</code> and <code>d2</code>. <code>margin</code>
+                        is to allow extra margin of error (in ms). <code>d1</code> and <code>d2</code> will
+                        accept a date object, timestamp, or text format.
+                        If not specified, they are assumed to be <em>now</em>.
+                    </li>
+                    <li>
+                        <code>isFuture()</code>
+                        Returns true if the date is in the future.
+                        
+                        Similar boolean handling exists for <code>isLastMonth()</code>,
+                        <code>isLastWeek()</code>, <code>isLastYear()</code>,
+                        <code>isLeapYear()</code>, <code>isNextMonth()</code>,
+                        <code>isNextWeek()</code>, <code>isNextYear()</code>,
+                        <code>isPast()</code>, <code>isThisMonth()</code>,
+                        <code>isThisWeek()</code>, <code>isThisYear()</code>,
+                        <code>isToday()</code>, <code>isTomorrow()</code>.
+                    </li>
+                    <li>
+                        <code>isUTC()</code>
+                        Returns true if the date has no timezone offset.
+                    </li>
+                    <li>
+                        <code>isValid()</code>
+                        Returns true if the date is valid.
+                    </li>
+                    <li>
+                        <code>iso()</code>
+                        Alias for <code>toISOString()</code>.
+                    </li>
+                    <li>
+                        <code>relative(fn)</code>
+                        Shortcut for format('relative'). <code>fn</code> is a callback that
+                        can be used for more granular control over the resulting
+                        string. <code>fn</code> is passed 4 arguments: the adjusted value,
+                        adjusted unit, offset in milliseconds, and dir, which is
+                        -1 if the string is in the past and 1 if it is in the
+                        future.
+                    </li>
+                    <li>
+                        <code>resetTime()</code>
+                        Resets the time in the date to 00:00:00.000.
+                    </li>
+                    <li>
+                        <code>rewind(param)</code>
+                        Sets the date back. <code>param</code> can accept multiple formats
+                        including a single number as a timestamp, an object, or
+                        enumerated parameters (as with the Date constructor). 
+                    </li>
+                    <li>
+                        <code>set(set, reset = false)</code>
+                        Sets the date object. <code>set</code> can accept multiple formats
+                        including a single number as a timestamp, an object, or
+                        enumerated parameters (as with the Date constructor). If
+                        <code>reset</code> is set, the time will also be reset to 00:00:00.000.
+                    </li>
+                    <li>
+                        <code>setUTC(param)</code>
+                        Sets the date object according to universal time. <code>param</code>
+                        can accept multiple formats including a single number as a timestamp,
+                        an object, or enumerated parameters (as with the Date constructor).
+                    </li>
+                    <li>
+                        <code>setUTCWeek(d)</code>
+                        Sets the week (of the year) according to universal time. <code>d</code>
+                        must be an integer between 0 and 52.
+                        
+                        Similar handling exists for <code>setWeek(d)</code>.
+                    </li>
+                    <li>
+                        <code>setUTCWeekday(d)</code>
+                        Sets the weekday of the date according to universal time. <code>d</code>
+                        must be an integer between 0 and 6.
+                        
+                        Similar handling exists for <code>setWeekday(d)</code>.
+                    </li>
+                    <li>
+                        <code>toISOString()</code>
+                        Formats the string to ISO8601 format. This will always format
+                        as UTC time. Provided for browsers that do not support this method.
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                </ul>
             </section>
         </div>
 
@@ -344,7 +1046,100 @@
                 <h1>Components: Object Methods</h1>
             </header>
             <section>
-
+                <ul>
+                    <li>
+                        <code>underscore()</code>
+                        Converts hyphens and camel casing to underscores.
+                    </li>
+ <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+ <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                </ul>
             </section>
         </div>
 
@@ -354,7 +1149,100 @@
                 <h1>Components: Function Methods</h1>
             </header>
             <section>
-
+                <ul>
+                    <li>
+                        <code>underscore()</code>
+                        Converts hyphens and camel casing to underscores.
+                    </li>
+ <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+ <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                </ul>
             </section>
         </div>
 
@@ -364,7 +1252,100 @@
                 <h1>Components: RegExp Methods</h1>
             </header>
             <section>
-
+                <ul>
+                    <li>
+                        <code>underscore()</code>
+                        Converts hyphens and camel casing to underscores.
+                    </li>
+ <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+ <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                    <li>
+                        <code>abs()</code>
+                        
+                    </li>
+                </ul>
             </section>
         </div>
 
