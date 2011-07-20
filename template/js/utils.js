@@ -294,8 +294,7 @@
     if (!query('#' + this.current)) {
       // if this happens is very likely that someone is coming from
       // a link with the old permalink format, i.e. #slide24
-      alert('The format of the permalinks have recently changed. If you are coming ' +
-             'here from an old external link it\'s very likely you will land to the wrong slide');
+      alert('The permalinks have recently changed and we cannot find the slide you have requested.');
       this.current = "landing-slide";
     }
     var _t = this;
@@ -361,7 +360,7 @@
       if (elem && elem.className != 'presentation') {
         this._presentationCounter.textContent = currentIndex;
         if (this._menuCounter) {
-          this._menuCounter.textContent = currentIndex;          
+          this._menuCounter.textContent = currentIndex;
         }
       }
       this._speakerNote.innerHTML = this._slides[currentIndex - 1].getSpeakerNote();
@@ -526,7 +525,7 @@
   query('#toc-list').innerHTML = li_array.join('');
 
   var slideshow = new SlideShow(queryAll('.slide'));
-  
+
   document.addEventListener('DOMContentLoaded', function() {
     query('.slides').style.display = 'block';
   }, false);
@@ -537,5 +536,5 @@
 
   queryAll('pre').forEach(function(el) {
     addClass(el, 'prettyprint');
-  });    
+  });
 })();
