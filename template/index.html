@@ -26,6 +26,7 @@
         <title>Skookum Digital Works | Presentation Template</title>
         <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono" rel="stylesheet" type="text/css" />
         <link id="prettify-link" href="styles/prettify.css" rel="stylesheet" disabled />
+        <link href="styles/sh_dull.min.css" rel="stylesheet" />
         <link href="styles/fonts.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="styles/common.excss" rel="stylesheet" type="text/excss" media="screen" />
         <!--link class="theme" href="styles/default.excss" rel="stylesheet" type="text/excss" media="screen" /-->
@@ -56,25 +57,7 @@
       <div id="presentation-counter">Loading...</div>
 
         <!-- slides container -->
-        <div id="slides" class="slides" style="display:none">
-
-            <!-- landing page -->
-            <div class="slide" id="landing-slide">
-                <!-- main content area -->
-                <section class="middle">
-                    <p>This presentation is an HTML5 website</p>
-                    <p>Press <span id="left-init-key" class="key">&rarr;</span> key to advance.</p>
-                    <p id="disclaimer-message">Having issues seeing the presentation? Read the <a href="disclaimer.html">disclaimer</a></p>
-                </section>
-
-                <!-- speaker notes (hidden from viewers) -->
-                <aside class="note">
-                    <section>
-                      Welcome! (This field is for speaker notes and commentary.)
-                    </section>
-                </aside>
-            </div>
-            <!-- end title page -->
+        <div id="slides" class="slides">
 
             <!-- title page -->
             <div class="slide" id="title-slide">
@@ -82,12 +65,12 @@
                     <!-- title heading group -->
                     <hgroup>
                         <!-- main heading -->
-                        <h1>HTML5*</h1>
+                        <h1>Presentation Title</h1>
                         <!-- supporting line -->
-                        <h2>Web Development to the next level</h2>
+                        <h2>Supporting Title</h2>
                     </hgroup>
                     <!-- summary text / author / etc -->
-                    <p>*Including other next generation technologies of the Web Development stack</p>
+                    <p>By Corey Ballou</p>
                 </section>
             </div>
             <!-- end title page -->
@@ -238,9 +221,26 @@ textarea.value = window.<b>localStorage</b>.<b>getItem</b>('value');
     <script>CFInstall.check({ mode: "overlay" });</script>
     <![endif]-->
 
+    <!-- TODO: boilerplate fallback on jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script src="src/prettify/prettify.js" onload="prettyPrint();" defer></script>
     <script src="js/excss.js"></script>
     <script src="js/utils.js"></script>
+
+    <!-- syntax highlighting: enable as needed -->
+    <!-- additional language packs: http://shjs.sourceforge.net/lang/ -->
+    <!-- additional styles: http://shjs.sourceforge.net/css/ -->
+    <!-- documentation for picking proper class to style: http://shjs.sourceforge.net/doc/documentation.html -->
+    <script src="js/sh_main.min.js"></script>
+    <!-- javascript syntax highlighting -->
+    <script type="js/sh_javascript.min.js"></script>
+    <!-- php syntax highlighting -->
+    <!--script type="js/sh_php.min.js"></script-->
+    <!-- html syntax highlighting -->
+    <!--script type="js/sh_html.min.js"></script-->
+    <!-- sql syntax highlighting -->
+    <!--script type="js/sh_sql.min.js"></script-->
+
     <script>
     // Check if new appcache is available, load it, and reload page.
     if (window.applicationCache) {
@@ -254,11 +254,10 @@ textarea.value = window.<b>localStorage</b>.<b>getItem</b>('value');
       }, false);
     }
 
-    window.addEventListener('load', fullyLoaded, false);
-
-    function fullyLoaded() {
-        document.getElementById('slides').style.display = 'block'
-    }
+    // enable syntax highlighting
+    $(function(){
+        sh_highlightDocument();
+    });
     </script>
   </body>
 </html>

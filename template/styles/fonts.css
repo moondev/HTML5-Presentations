@@ -1,5 +1,17 @@
 /* Fonts */
 @font-face {
+  font-family: 'Droid Sans Mono';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Droid Sans Mono'), local('DroidSansMono'), url('/src/fonts/droid/DroidSansMono.woff') format('woff');
+}
+@font-face {
+  font-family: 'Droid Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Droid Sans'), local('DroidSans'), url('/src/fonts/droid/DroidSans.woff') format('woff');
+}
+@font-face {
   font-family: 'Yanone Kaffeesatz';
   font-style: normal;
   font-weight: 400;

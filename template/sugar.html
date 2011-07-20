@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html manifest="cache.appcache">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
+        <title>Example</title>
+    </head>
+    <body>
+
+        <!-- Slide: About Sugar.JS -->
+        <div class="slide" id="about-sugar-js">
+            <header>
+                <h1>About Sugar</h1>
+                <h2>A Quick Summary</h2>
+            </header>
+            <section>
+                Sugar is likely to be compared to Underscore.js as they both are
+                support libraries for "functional" programming. The main
+                differences are in their depth, syntax, and overall implementation.
+                Sugar supports a much larger set of core utilities than that of
+                Underscore.js. Those actively using Underscore.js will likely
+                complain about the fact that Sugar extends Javascript objects.
+                While I cannot argue this fact, Sugar does make an effort to
+                maintain maximum compatibility as it will never overwrite methods
+                that already exist. You can even manually override existing
+                frameworks that have already extended native objects (Prototype,
+                YUI, MooTools) with a simple call to Object.enableSugar().
+            </section>
+        </div>
+
+        <!-- Slide: Components of Sugar -->
+        <div class="slide" id="components-of-sugar">
+            <header>
+                <h1>Components of Sugar</h1>
+            </header>
+            <section>
+                <ul>
+                    <li>
+                        Arrays
+                        <ul>
+                            <li>Cross-browser fixes for broken methods (<em>indexOf, forEach, reduce...</em>)</li>
+                            <li>Enhanced (extended) support of methods (additional arguments)</li>
+                            <li>Helper methods for manipulation</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Strings
+                        <ul>
+                            <li>Cross-browser fixes for regex inconsistencies (<em>split</em>)</li>
+                            <li>Multi-lingual support (unicode)</li>
+                            <li>Helper methods for manipulation</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Numbers
+                        <ul>
+                            <li>Shortcut methods to <code>Math</code> object methods</li>
+                            <li>Number rounding to precision, number padding, number formatting</li>
+                            <li>Intertwined with the date class for advanced date manipulations</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Dates
+                        <ul>
+                            <li>Understanding of nearly all date strings
+                                <ul>
+                                    <li>Text based, relative, absolute, timestamps</li>
+                                </ul>
+                            </li>
+                            <li>Date output in nearly any format</li>
+                            <li>Helper methods for date manipulation and validation</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Objects
+                        <ul>
+                            <li>Create hash-like objects (<em>keys, values</em>)</li>
+                            <li>Type checking methods</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Functions
+                        <ul>
+                            <li>Easily bind scope to functions</li>
+                            <li>Delayed function calling</li>
+                            <li>Throttled, non-blocking function closures</li>
+                        </ul>
+                    </li>
+                    <li>
+                        RegExp
+                        <ul>
+                            <li>Fixes inconsistencies in string splitting on regexes</li>
+                            <li>Convenient escape method</li>
+                            <li>Manipulation methods for generating RegExps</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Slide: String Methods -->
+        <div class="slide" id="string-methods">
+            <header>
+                <h1>Components: String Methods</h1>
+            </header>
+            <section>
+                <ul>
+                    <li>
+                        <code>add(str, index = 0)</code>
+                        Adds <code>str</code> at <code>index</code>. Negative values allowed.
+                    </li>
+                    <li>
+                        <code>at(index, loop = true)</code>
+                        Gets the character(s) at a given index.
+                    </li>
+                    <li>
+                        <code>camelize(first = true)</code>
+                        Converts underscores and hyphens to camel case. Capitalize first letter by default.
+                    </li>
+                    <li>
+                        <code>capitalize()</code>
+                        Capitalizes the first character in the string.
+                    </li>
+                    <li>
+                        <code>chars(fn)</code>
+                        Runs callback <code>fn</code> against each character in the string. Returns array of chars.
+                    </li>
+                    <li>
+                        <code>codes(fn)</code>
+                        Runs callback <code>fn</code> against each character code in the string. Returns array of char codes.
+                        If given a string, converts to array of char codes.
+                    </li>
+                    <li>
+                        <code>compact()</code>
+                        Compacts all white space in the string to a single space and trims ends.
+                    </li>
+                    <li>
+                        <code>dasherize()</code>
+                        Converts underscores and camel casing to hyphens.
+                    </li>
+                    <li>
+                        <code>decodeBase64()</code>
+                        Decodes the string from base64 encoding.
+                    </li>
+                    <li>
+                        <code>each(search, fn)</code>
+                        Runs callback <code>fn</code> against each occurence of <code>search</code>. Returns array.
+                    </li>
+                    <li>
+                        <code>encodeBase64</code>
+                        Encodes the string into base64 encoding.
+                    </li>
+                    <li>
+                        <code>endsWith(find, caseSensitive = true)</code>
+                        Returns true if the string ends with <code>find</code>
+                    </li>
+                    <li>
+                        <code>escapeRegExp()</code>
+                        Escapes all RegExp tokens in the string.
+                    </li>
+                    <li>
+                        <code>escapeURL(param = false)</code>
+                        Escapes characters in a string to make a valid URL. If <code>param = true</code>,
+                        will also escape valid URL characters for use as URL parameters.
+                    </li>
+                    <li>
+                        <code>first(n = 1)</code>
+                        Returns the first <code>n</code> characters of the string.
+                    </li>
+                    <li>
+                        <code>from(index = 0)</code>
+                        Returns a section of the string starting from <code>index</code>
+                    </li>
+                    <li>
+                        <code>hankaku(mode = 'all')</code>
+                        Converts full-width characters (zenkaku) to half-width (hankaku).
+                        Mode accepts <code>a</code> (alphabet), <code>n</code> (numbers),
+                        <code>k</code> (katakana), <code>s</code> (spaces), <code>p</code>
+                        (punctuation), or <code>all</code>.
+                    </li>
+                    <li>
+                        <code>has(find)</code>
+                        Returns true if the string matches <code>find</code> where <code>find</code>
+                        may be a RegExp or string.
+                    </li>
+                    <li>
+                        <code>hiragana(all = true)</code>
+                        Converts katakana into hiragana. If <code>all</code> is false,
+                        only convert full-width katakana, otherwise convert all.
+                    </li>
+                    <li>
+                        <code>insert()</code>
+                        Alias for <code>add()</code>.
+                    </li>
+                    <li>
+                        <code>isBlank()</code>
+                        Returns true if the string has a length of 0 or contains only whitespace.
+                    </li>
+                    <li>
+                        <code>katakana()</code>
+                        Converts hiragana into katakana.
+                    </li>
+                    <li>
+                        <code>last(n = 1)</code>
+                        Returns the last <code>n</code> characters of the string.
+                    </li>
+                    <li>
+                        <code>lines(fn)</code>
+                        Runs callback <code>fn</code> against each line in the string. Returns an array of lines.
+                    </li>
+                    <li>
+                        <code>normalize()</code>
+                        Returns the string with accented and non-standard Latin-based characters converted into
+                        standard letters.
+                    </li>
+                    <li>
+                        <code>pad(num = 0, padding = '')</code>
+                        Pads both sides of a string where <code>num</code> is the number of characters
+                        on each side and <code>padding</code> is the character to pad with.
+                    </li>
+                    <li>
+                        <code>padLeft(num = 0, padding = '')</code>
+                        Pads the left side of the string where <code>num</code> is the number of characters
+                        on each side and <code>padding</code> is the character to pad with.
+                    </li>
+                    <li>
+                        <code>padRight(num = 0, padding = '')</code>
+                        Pads the right side of the string where <code>num</code> is the number of characters
+                        on each side and <code>padding</code> is the character to pad with.
+                    </li>
+                    <li>
+                        <code>removeTags(tag1, tag2, ...)</code>
+                        Removes all HTML tags and their contents from the string. No arguments
+                        will remove all tags and nested content.
+                    </li>
+                    <li>
+                        <code>repeat(num = 0)</code>
+                        Returns the string repeated <code>num</code> times.
+                    </li>
+                    <li>
+                        <code>reverse()</code>
+                        Reverse the string.
+                    </li>
+                    <li>
+                        <code>split(separator, limit)</code>
+                        Split the string by <code>separator</code> into an array. <em>Native regex support fixed</em>.
+                    </li>
+                    <li>
+                        <code>stripTags(tag12, tag2, ...)</code>
+                        Strips all HTML tags from the string. Unlike <code>removeTags</code>,
+                        all child text remains intact.
+                    </li>
+                    <li>
+                        <code>titleize()</code>
+                        Capitalizes all first letters.
+                    </li>
+                    <li>
+                        <code>to(index = end)</code>
+                        Returns a section of the string ending at <code>index</code>.
+                    </li>
+                    <li>
+                        <code>toDate()</code>
+                        Creates a date from the given string.
+                    </li>
+                    <li>
+                        <code>toNumber(base = 10)</code>
+                        Convers the string into a number. Any value with a "."
+                        fill is converted to floating point, otherwise int.
+                    </li>
+                    <li>
+                        <code>toObject(sep1, sep2)</code>
+                        Converts a string into an object. String could be formatted
+                        as URL GET parameters or piped and comma delimited.
+                    </li>
+                    <li>
+                        <code>trim()</code>
+                        Removes leading and trailing whitespace from a string.
+                    </li>
+                    <li>
+                        <code>trimLeft()</code>
+                        Removes leading whitespace from a string.
+                    </li>
+                    <li>
+                        <code>trimRight()</code>
+                        Removes trailing whitespace from a string.
+                    </li>
+                    <li>
+                        <code>underscore()</code>
+                        Converts hyphens and camel casing to underscores.
+                    </li>
+                    <li>
+                        <code>unescapeURL(partial = false)</code>
+                        Restores escaped characters in a URL escaped string. If <code>partial</code>
+                        is true, will only unescape non-valid URL chars.
+                    </li>
+                    <li>
+                        <code>words(fn)</code>
+                        Runs callback <code>fn</code> against each word in the string. Returns
+                        an array of words.
+                    </li>
+                    <li>
+                        <code>zenkaku(mode)</code>
+                        Converts half-width characters (hankaku) to full-width (zenkaku).
+                        Mode accepts <code>a</code> (alphabet), <code>n</code> (numbers),
+                        <code>k</code> (katakana), <code>s</code> (spaces), <code>p</code>
+                        (punctuation), or <code>all</code>.
+                    </li>
+            </section>
+        </div>
+
+        <!-- Slide: Number Methods -->
+        <div class="slide" id="number-methods">
+            <header>
+                <h1>Components: Number Methods</h1>
+            </header>
+            <section>
+
+            </section>
+        </div>
+
+        <!-- Slide: Array Methods -->
+        <div class="slide" id="array-methods">
+            <header>
+                <h1>Components: Array Methods</h1>
+            </header>
+            <section>
+
+            </section>
+        </div>
+
+        <!-- Slide: Date Methods -->
+        <div class="slide" id="date-methods">
+            <header>
+                <h1>Components: Date Methods</h1>
+            </header>
+            <section>
+
+            </section>
+        </div>
+
+        <!-- Slide: Object Methods -->
+        <div class="slide" id="object-methods">
+            <header>
+                <h1>Components: Object Methods</h1>
+            </header>
+            <section>
+
+            </section>
+        </div>
+
+        <!-- Slide: Function Methods -->
+        <div class="slide" id="function-methods">
+            <header>
+                <h1>Components: Function Methods</h1>
+            </header>
+            <section>
+
+            </section>
+        </div>
+
+        <!-- Slide: RegExp Methods -->
+        <div class="slide" id="regexp-methods">
+            <header>
+                <h1>Components: RegExp Methods</h1>
+            </header>
+            <section>
+
+            </section>
+        </div>
+
+
+        <!-- Example: Twitter API -->
+        <div class="slide" id="twitter-api-jsonp">
+            <header><h1>Example 1: Easily Parse Twitter JSONP Response</h1></header>
+            <section>
+<pre class="sh_javascript">
+getLatestTweets(function(t) {
+  var users = t.map('user').unique();
+  var total = users.sum('statuses_count').format();
+  var top   = users.max('followers_count').first();
+  var count = top.followers_count.format();
+  var since = Date.create(top.created_at);
+  return 'Returned ' + users.length + ' Skookum team members with a total of ' + total + ' tweets.\n' +
+         top.screen_name + ' is the most followed with ' + count + ' followers\n' +
+         'and started tweeting ' + since.relative() + '.';
+});
+</pre>
+                <div class="example">
+                    <div id="example1_output"></div>
+                </div>
+                <p><button class="runExample button" data-id="example1">Execute Example</button></p>
+            </section>
+        </div>
+
+        <!-- Example 1: Twitter API - Explanation -->
+        <div class="slide" id="twitter-api-jsonp">
+            <header><h1>Example 1: Break it Apart</h1></header>
+            <section>
+Retrieve the nested Remove duplicate users (i.e. return only unique users).
+<pre class="sh_javascript">
+var users = t.map('user').unique();
+</pre>
+Obtain the sum of all user status message counts.
+<pre class="sh_javascript">
+var total = users.sum('statuses_count').format();
+</pre>
+Sort the users array descending by number of followers.
+<pre class="sh_javascript">
+var top = users.max('followers_count').first();
+</pre>
+Retrieve the followers count for the most followed user.
+<pre class="sh_javascript">
+var count = top.followers_count.format();
+</pre>
+Given a date string, create a Javascript Date object.
+<pre class="sh_javascript">
+var since = Date.create(top.created_at);
+</pre>
+Return a string, including a relative time (i.e. <em>since 2 minutes ago</em>)
+<pre class="sh_javascript">
+return 'Returned ' + users.length + ' Skookum team members with a total of ' + total + ' tweets.\n' +
+       top.screen_name + ' is the most followed with ' + count + ' followers\n' +
+       'and started tweeting ' + since.relative() + '.';
+</pre>
+            </section>
+        </div>
+
+
+
+    </body>
+
+
+
+<script type="text/javascript">
+var $el = $('#example1_output');
+$(function() {
+
+    /**
+     * Retrieve the latest tweets from the Skookum twitter account and
+     * display them via text.
+     */
+    getLatestTweets(function(t) {
+      var users = t.map('user').unique();
+      var total = users.sum('statuses_count').format();
+      var top   = users.max('followers_count').first();
+      var count = top.followers_count.format();
+      var since = Date.create(top.created_at);
+      return 'Returned ' + users.length + ' Skookum team members with a total of ' + total + ' tweets.\n' +
+             top.screen_name + ' is the most followed with ' + count + ' followers\n' +
+             'and started tweeting ' + since.relative() + '.';
+    });
+
+});
+
+// jsonp request to twitter
+function getLatestTweets(callback) {
+    //$.getJSON('https://api.twitter.com/1/lists/show.json?callback=?', {}, function(data) {
+    //$.getJSON('http://api.twitter.com/statuses/public_timeline.json?callback=?', {}, function(data) {
+    $.getJSON(
+        'https://dev.twitter.com/docs/api/1/get/lists/statuses.json?callback=?',
+        { owner_screen_name: 'Skookum', slug: 'team' },
+        function(data) {
+            var output;
+            try {
+                console.log(data);
+                output = callback(data);
+                $el.removeClass('error');
+            } catch(e) {
+                output = e.message;
+                $el.addClass('error');
+            }
+            output = output.toString().replace(/\n/g, '<br/>');
+            el.html(output);
+        }
+    );
+}
+</script>
+</html>

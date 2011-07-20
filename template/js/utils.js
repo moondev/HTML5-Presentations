@@ -290,12 +290,10 @@
     try {
       this.current = h;
     } catch (e) { /* squeltch */ }
-    this.current = (!this.current) ? "landing-slide" : this.current.replace('#', '');
+    this.current = (!this.current) ? "title-slide" : this.current.replace('#', '');
     if (!query('#' + this.current)) {
-      // if this happens is very likely that someone is coming from
-      // a link with the old permalink format, i.e. #slide24
-      alert('The permalinks have recently changed and we cannot find the slide you have requested.');
-      this.current = "landing-slide";
+      //alert('The permalinks have recently changed and we cannot find the slide you have requested.');
+      this.current = "title-slide";
     }
     var _t = this;
     doc.addEventListener('keydown',
