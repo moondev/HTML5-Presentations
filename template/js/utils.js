@@ -418,7 +418,6 @@
       //this.current = slideId;
       this._update(slideId, dontPush);
     },
-
     showNotes: function() {
       if (disableNotes) {
         return;
@@ -428,11 +427,6 @@
     },
     switch3D: function() {
       toggleClass(document.body, 'three-d');
-    },
-    toggleHightlight: function() {
-      var link = query('#prettify-link');
-      link.disabled = !(link.disabled);
-      sessionStorage['highlightOn'] = !link.disabled;
     },
     changeTheme: function() {
       var sheetIndex = 0;
@@ -465,8 +459,6 @@
           this.toggleHelp(); break;
         case 51:  // 3
           this.switch3D(); break;
-        case 72:  // H
-          this.toggleHightlight(); break;
         case 78:  // N
           this.showNotes(); break;
         case 83:  // S
@@ -514,11 +506,6 @@
     }
   };
 
-  // load highlight setting from session storage, if available.
-  // session storage can only store strings so we have to assume type coercion
-  // for the boolean logic here
-  // query('#prettify-link').disabled = !(sessionStorage['highlightOn'] == 'true');
-
   // disable style theme stylesheets
   var themeEls = queryAll('style[link_href]').slice(1);
   var stylesheetPath = sessionStorage['theme'] || 'default.css';
@@ -530,6 +517,7 @@
       found = true;
     }
   });
+
   if (!found) {
     themeEls[0].disabled = false;
     sessionStorage['theme'] = themeEls[0].getAttribute('link_href').split('/').pop();
@@ -537,21 +525,30 @@
 
   // generate the table of contents
   var li_array = [];
-  var transitionSlides = queryAll('.transitionSlide').forEach(function(el) {
-    li_array.push( ['<li><a data-hash="', el.id, '">', query('h1', el).textContent, '</a></li>'].join(''));
+  $('.transitionSlide').each(function() {
+    var $this = $(this);
+    li_array.push( ['<li><a href="#" data-hash="', $this.attr('id'), '">', $this.find('h1').text(), '</a></li>'].join('') );
   });
-  query('#toc-list').innerHTML = li_array.join('');
+  $('#toc-list').html(li_array.join(''));
 
   // initialize the slideshow
   var slideshow = new SlideShow(queryAll('.slide'));
 
+  // show slides on load
   document.addEventListener('DOMContentLoaded', function() {
     query('.slides').style.display = 'block';
   }, false);
 
+  $('#toc-list li a').live('click', function() {
+    slideshow.go($(this).data('hash'));
+    return false;
+  });
+
+  /*
   queryAll('#toc-list li a').forEach(function(el) {
       el.onclick = function() { slideshow.go(el.dataset['hash']); };
   });
+  */
 
   var screenWidth;
   if (typeof( window.innerWidth ) == 'number') {

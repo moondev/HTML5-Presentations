@@ -40,7 +40,7 @@
         <!-- additional language packs: http://shjs.sourceforge.net/lang/ -->
         <!-- additional styles: http://shjs.sourceforge.net/css/ -->
         <!-- documentation for picking proper class to style: http://shjs.sourceforge.net/doc/documentation.html -->
-        <script src="js/sh_main.js"></script>
+        <script src="js/sh_main.min.js"></script>
         <!-- javascript syntax highlighting -->
         <script src="js/sh_javascript.min.js"></script>
         <!-- php syntax highlighting -->
@@ -232,7 +232,8 @@
                         </li>
                         <li>
                             <div class="heading"><code>compact()</code></div>
-                            <span class="smaller">Compacts all white space in the string to a single space and trims ends.</span>
+                            <span class="smaller">Compacts all white space in the string to a single space and trims ends.
+                            <a href="#" class="exampleCode" data-id="string_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>dasherize()</code></div>
@@ -1616,6 +1617,58 @@ return 'Returned ' + users.length + ' Skookum team members with a total of ' + t
     </div>
     <!-- presentation -->
 
+    <!-- CODE EXAMPLES -->
+    <div id="string_page_example" class="hidden">
+        <h2>String Methods - Page 1 Examples</h2>
+<pre class="sh_javascript">
+// remove extra spacing from a string
+'too \n much \n space'.compact()
+
+// built in base64 encoding and decoding
+'hello, world'.encodeBase64().decodeBase64();
+
+// take the effort out of escaping regular expressions
+var r = new RegExp('&lt;a href="(.*)+"[a-zA-Z0-9]+&gt;'.escapeRegExp());
+
+// simple string matching (no more indexOf)
+var found = 'the quick brown fox'.has('quick');
+
+// looks for line-breaks and runs a callback function against each
+'totally\nauto\ninsert\nsome\nhtml'.lines(function(line)) { console.log(line); });
+
+// fix funky, foreign, accented characters and convert to equivalents
+'Ménage à trois'.normalize()
+
+// looks for double line-breaks and runs a callback function against each
+'multiple\n\nparagraphs\n\nhere'.paragraphs(function(paragraph) { console.log(paragraph); });
+
+// remove all HTML tags and their nested content
+'&lt;a onclick="alert(\'xss\');"&gt;&lt;/a&gt;&lt;div>remove me too&lt;/div&gt;'.removeTags();
+'&lt;a onclick="alert(\'xss\');"&gt;&lt;/a&gt;&lt;div>still here&lt;/div&gt;'.removeTags('a');
+
+// strip html but leave the underlying text
+'&lt;a onclick="alert(\'xss\');"&gt;hello, world&lt;/a&gt;&lt;div&gt;still here&lt;/div&gt;'.stripTags('a');
+
+// create a date from just about any well-formatted string
+'next Monday'.toDate();
+
+// cast a string to a number, great for fixing pesky pixels
+'960px'.toNumber();
+
+// turn GET parameters into an object
+'hello=world&foo=bar&fizz=buzz'.toObject('&', '=');
+</pre>
+        Output:
+        <div class="example" id="string_page_output"></div>
+    </div>
+
+    <!-- DON'T TOUCH - HOLDS EXAMPLES -->
+    <div id="exampleWindow">
+        <a href="#" class="close">x</a>
+        <div id="exampleContent"></div>
+    </div>
+    <div id="exampleWrapper"></div>
+
     <!--[if lt IE 9]>
     <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
     <script>CFInstall.check({ mode: "overlay" });</script>
@@ -1646,7 +1699,46 @@ return 'Returned ' + users.length + ' Skookum team members with a total of ' + t
             $(this).append('<a href="http://skookum.com" title="Skookum Digital Works" class="skookum"></a>');
         });
 
-        // watch for examples
+        /**
+         * Loads a "lightbox" to be used for displaying example code.
+         * Can be coupled with .runExample below to run code directly
+         * in the lightbox. Assumes the example content can be found
+         * in <div id="[data-id]_example" class="hidden"></div>.
+         */
+        $('.exampleCode').live('click', function() {
+            var $this = $(this);
+            var id = $this.data('id');
+            // find the example content
+            var $content = $('#' + id + '_example');
+            $content.appendTo($('#exampleWindow').find('#exampleContent'));
+            $content.removeClass('hidden');
+            // open up the windows
+            $('#exampleWrapper').show();
+            $('#exampleWindow').show();
+
+            return false;
+        });
+
+        /**
+         * Watch for close of example window.
+         */
+        $('#exampleWindow').find('.close').live('click', function() {
+            // close up the windows
+            $('#exampleWindow').hide();
+            $('#exampleWrapper').hide();
+            // remove old content
+            var $content = $('#exampleWindow').find('#exampleContent').children();
+            $content.addClass('hidden').appendTo('body');
+            return false;
+        });
+
+        /**
+         * Handles inline running examples. Assumes an example
+         * has a data-id which references the function name stored in
+         * examples.js for dynamic call. Also assumes the slide contains
+         * <div class="example" id="[data-id]_output"></div> for
+         * displaying the results of running the example code.
+         */
         $('.runExample').click(function(e) {
             e.preventDefault();
             e.stopPropagation();

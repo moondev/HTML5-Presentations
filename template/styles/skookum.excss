@@ -3,7 +3,6 @@
 }
 
 .slide {
-  background-color: #eee;
   opacity: 0.35;
   @mixin borderRadius(10px, 20px, 10px);
 
@@ -26,6 +25,7 @@
   /* NOTE(slightlyoff): simpler animations for slower boxes */
   /* @mixin transition(margin, 0.3s, ease-in-out;) */
   &.current {
+    @mixin bgGradient(#fff, #dfdfdf, #ddd);
     @mixin transformSingle(scale, 1.0);
     opacity: 1.0;
   }
@@ -167,4 +167,98 @@ div.example {
   min-height: 10px;
   color: #aaa;
   font-family: Consolas, Monaco, "Bitstream Vera Sans Mono", "Lucida Console", monospace;
+  overflow: auto;
+  max-height: 200px;
 }
+
+.exampleCode {
+  font-size: 80%;
+  display: inline-block;
+  padding: 2px 4px;
+  margin: 0 1px;
+  background: #dd5236;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: none;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.exampleCode:hover {
+  background: #bd3216;
+}
+
+/* the holy grail, a live example */
+#exampleWrapper {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.8;
+  overflow: hidden;
+  z-index: 100;
+
+  -webkit-transition-property: margin, -webkit-transform, opacity;
+  -webkit-transition-duration: 0.3s, 0.3s, 0.3s;
+  -webkit-transition-timing-function: ease-in-out;
+
+  -moz-transition-property: margin, -moz-transform, opacity;
+  -moz-transition-duration: 0.3s, 0.3s, 0.3s;
+  -moz-transition-timing-function: ease-in-out;
+
+  -o-transition-property: margin, -o-transform, opacity;
+  -o-transition-duration: 0.3s, 0.3s, 0.3s;
+  -o-transition-timing-function: ease-in-out;
+}
+
+#exampleWindow {
+  display: none;
+  position: absolute;
+  background: #fff;
+  width: 90%;
+  height: 90%;
+  left: 5%;
+  top: 5%;
+  z-index: 101;
+
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+
+  -webkit-transition-property: margin, -webkit-transform, opacity;
+  -webkit-transition-duration: 0.6s, 0.6s, 0.6s;
+  -webkit-transition-timing-function: ease-in-out;
+
+  -moz-transition-property: margin, -moz-transform, opacity;
+  -moz-transition-duration: 0.6s, 0.6s, 0.6s;
+  -moz-transition-timing-function: ease-in-out;
+
+  -o-transition-property: margin, -o-transform, opacity;
+  -o-transition-duration: 0.6s, 0.6s, 0.6s;
+  -o-transition-timing-function: ease-in-out;
+}
+
+#exampleWindow .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #dd5236;
+  text-transform: smallcaps;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#exampleWindow #exampleContent {
+  padding: 20px;
+}
+
+#exampleContent h2 {
+  color: #054238;
+  font-size: 32px;
+  line-height: 32px;
+  margin-bottom: 6px;
+}
+
+.hidden { display: none !important; }
