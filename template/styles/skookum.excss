@@ -29,6 +29,23 @@
     @mixin transformSingle(scale, 1.0);
     opacity: 1.0;
   }
+
+  & .skookum {
+    display: block;
+    width: 206px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background: url(images/skookum.png);
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    opacity: 1.0;
+    text-decoration: none;
+    overflow: hidden;
+    text-indent: -9999em;
+    border-bottom: none;
+  }
 }
 
 header {
@@ -56,6 +73,98 @@ pre {
   border-right: 5px solid #987;
 }
 
+button {
+  display: inline-block;
+  color: #fff;
+  border: 2px solid #256e5e;
+  text-shadow: 1px 1px 1px #000;
+  background: #357e6e;
+  padding: 2px 4px;
+  box-shadow: 1px 1px 2px #000;
+  -moz-box-shadow: 1px 1px 2px #000;
+  -webkit-box-shadow: 1px 1px 2px #000;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  cursor: pointer;
+}
 
+ol, ul {
+    font-size: 20px;
+    line-height: 24px;
+    padding-left: 0;
+    list-style-type: none;
+}
 
-054238
+ul > li {
+    font-weight: bold;
+}
+
+ul.bullet > li {
+    list-style: square outside none;
+}
+
+li {
+    font-size: 20px;
+    line-height: 24px;
+    list-style: none outside none;
+    padding: 0;
+    margin-bottom: 4px;
+}
+
+li li {
+    font-weight: normal;
+    list-style: square outside none;
+}
+
+pre {
+    font-family: Consolas, Monaco, "Bitstream Vera Sans Mono", "Lucida Console", monospace;
+    border-color: #B7E5DA;
+    background-color: #EFFFFB !important;
+    padding: 10px;
+    margin-top: 2px;
+    max-height: 400px;
+    overflow: auto;
+}
+
+code {
+    display: inline-block;
+    padding: 4px 2px;
+    margin: 0 1px;
+    background: #ddd;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+.heading {
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.heading code {
+    display: inline-block;
+    padding: 4px 6px;
+    background: #ccc;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+.smaller {
+    font-size: 80%;
+    line-height: 80%;
+    font-weight: normal;
+}
+
+.slide .larger {
+  font-size: 180%;
+}
+
+div.example {
+  min-height: 10px;
+  color: #aaa;
+  font-family: Consolas, Monaco, "Bitstream Vera Sans Mono", "Lucida Console", monospace;
+}

@@ -25,7 +25,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
         <title>Skookum Digital Works | Presentation Template</title>
         <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono" rel="stylesheet" type="text/css" />
-        <link id="prettify-link" href="styles/prettify.css" rel="stylesheet" disabled />
+        <!--link id="prettify-link" href="src/prettify/prettify.css" rel="stylesheet" disabled /-->
         <link href="styles/sh_dull.min.css" rel="stylesheet" />
         <link href="styles/fonts.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="styles/common.excss" rel="stylesheet" type="text/excss" media="screen" />
@@ -160,8 +160,8 @@ textarea.value = window.<b>localStorage</b>.<b>getItem</b>('value');
               <section class="middle formula">
                 <header><h1>Credits</h1></header>
                 <p class="resource-link">
-                  <a href="http://slides.html5rocks.com">http://slides.html5rocks.com</a>
-                  <a href="http://www.html5rocks.com">http://www.html5rocks.com</a>
+                    <a href="http://slides.html5rocks.com">http://slides.html5rocks.com</a>
+                    <a href="http://www.html5rocks.com">http://www.html5rocks.com</a>
                 </p>
               </section>
             </div>
@@ -223,7 +223,7 @@ textarea.value = window.<b>localStorage</b>.<b>getItem</b>('value');
 
     <!-- TODO: boilerplate fallback on jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-    <script src="src/prettify/prettify.js" onload="prettyPrint();" defer></script>
+    <!--script src="src/prettify/prettify.js" onload="prettyPrint();" defer></script-->
     <script src="js/excss.js"></script>
     <script src="js/utils.js"></script>
 
@@ -244,19 +244,24 @@ textarea.value = window.<b>localStorage</b>.<b>getItem</b>('value');
     <script>
     // Check if new appcache is available, load it, and reload page.
     if (window.applicationCache) {
-      window.applicationCache.addEventListener('updateready', function(e) {
-        if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
-          window.applicationCache.swapCache();
-          if (confirm('A new version of this site is available. Load it?')) {
-            window.location.reload();
-          }
-        }
-      }, false);
+        window.applicationCache.addEventListener('updateready', function(e) {
+            if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+              window.applicationCache.swapCache();
+              if (confirm('A new version of this site is available. Load it?')) {
+                window.location.reload();
+              }
+            }
+        }, false);
     }
 
-    // enable syntax highlighting
-    $(function(){
+    $(function() {
+        // syntax highlighter
         sh_highlightDocument();
+
+        // dynamically add logo
+        $('.slide').each(function() {
+            $(this).append('<a href="http://skookum.com" title="Skookum Digital Works" class="skookum"></a>');
+        });
     });
     </script>
   </body>

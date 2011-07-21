@@ -15,6 +15,29 @@
     return id;
   };
 
+  var getCSSRule = function(ruleName) {
+    if (document.styleSheets) {
+      var ssLen = document.styleSheets.length;
+      for (var i=0; i < ssLen; i++) {
+        try {
+          var styleSheet = document.styleSheets[i];
+          cssRule = styleSheet.cssRules || styleSheet[rules];
+          var ruleLen = cssRule.length;
+          for (var j=0; j < ruleLen; j++) {
+            if (cssRule[j] && cssRule[j].selectorText != 'undefined') {
+              if (cssRule[j].selectorText == ruleName) {
+                return cssRule[j];
+              }
+            }
+          }
+        } catch (e) {
+           // oh well...
+        }
+      }
+    }
+    return false;
+  }
+
   var query = function(query, root) {
     return queryAll(query, root)[0];
   }
@@ -304,8 +327,10 @@
         function(e) { _t.handleTouchEnd(e); }, false);
     window.addEventListener('popstate',
         function(e) { if (e.state) { _t.go(e.state, true); } }, false);
+    /*
     query('#left-init-key').addEventListener('click',
         function() { _t.next(); }, false);
+    */
     this._update();
     queryAll('#nav-prev, #nav-next').forEach(function(el) {
       el.addEventListener('click', _t.onNavClick.bind(_t), false);
@@ -492,7 +517,7 @@
   // load highlight setting from session storage, if available.
   // session storage can only store strings so we have to assume type coercion
   // for the boolean logic here
-  query('#prettify-link').disabled = !(sessionStorage['highlightOn'] == 'true');
+  // query('#prettify-link').disabled = !(sessionStorage['highlightOn'] == 'true');
 
   // disable style theme stylesheets
   var themeEls = queryAll('style[link_href]').slice(1);
@@ -510,18 +535,14 @@
     sessionStorage['theme'] = themeEls[0].getAttribute('link_href').split('/').pop();
   }
 
-  // Initialize
+  // generate the table of contents
   var li_array = [];
   var transitionSlides = queryAll('.transitionSlide').forEach(function(el) {
-    li_array.push( ['<li><a data-hash="', el.id, '">',
-                    query('h2', el).textContent, '</a><img src="',
-                    query('img', el).src.replace(/64/g, '32'),
-                    '"/></li>'].join('')
-                 );
+    li_array.push( ['<li><a data-hash="', el.id, '">', query('h1', el).textContent, '</a></li>'].join(''));
   });
-
   query('#toc-list').innerHTML = li_array.join('');
 
+  // initialize the slideshow
   var slideshow = new SlideShow(queryAll('.slide'));
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -532,7 +553,24 @@
       el.onclick = function() { slideshow.go(el.dataset['hash']); };
   });
 
-  queryAll('pre').forEach(function(el) {
-    addClass(el, 'prettyprint');
-  });
+  var screenWidth;
+  if (typeof( window.innerWidth ) == 'number') {
+    screenWidth = window.innerWidth;
+  } else if (document.documentElement && document.documentElement.clientWidth) {
+    screenWidth = document.documentElement.clientWidth;
+  } else if (document.body && document.body.clientWidth) {
+    screenWidth = document.body.clientWidth;
+  }
+
+  // trickery for positioning slides a little better
+  var rightMargin = Math.floor(parseInt(screenWidth / 2)) - 180; // 90 = 1/2 80% size
+  var rule = getCSSRule('.slide.past');
+  if (rule) {
+    rule.style.marginLeft = (0 - 900 - Math.floor(parseInt(screenWidth / 2)) + 140) + 'px';
+  }
+  var rule = getCSSRule('.slide.future');
+  if (rule) {
+    rule.style.marginLeft = (Math.floor(parseInt(screenWidth / 2)) - 140) + 'px';
+  }
+
 })();
