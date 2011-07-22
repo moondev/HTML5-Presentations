@@ -1,9 +1,17 @@
 //==============================================================================
+// GENERIC HELPERS
+//==============================================================================
+function clearOutput($output) {
+    $output.clear();
+}
+
+function displayOutput(output, result) {
+    $output.append(window.JSON ? JSON.stringify(result) : result.toString());
+}
+//==============================================================================
 // EXAMPLE 1
 //==============================================================================
 function example1($output) {
-
-    alert('called');
 
     // jsonp request to twitter
     function getLatestTweets(callback) {
@@ -22,6 +30,7 @@ function example1($output) {
                     output = callback(data);
                     $output.removeClass('error');
                 } catch(e) {
+                    console.log(e);
                     output = e.message;
                     $output.addClass('error');
                 }
@@ -35,8 +44,8 @@ function example1($output) {
      * Retrieve the latest tweets from the Skookum twitter account and
      * display them via text.
      */
-    getLatestTweets(function(t) {
-        var users = t.map('user').unique();
+    getLatestTweets(function(tweets) {
+        var users = tweets.map('user').unique();
         var total = users.sum('statuses_count').format();
         var top   = users.max('followers_count').first();
         var count = top.followers_count.format();

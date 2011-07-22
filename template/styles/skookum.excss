@@ -36,7 +36,8 @@
     height: 50px;
     background-repeat: no-repeat;
     background-position: right bottom;
-    background: url(images/skookum.png);
+    background-size: 103px 25px;
+    background-image: url(images/skookum.png);
     position: absolute;
     bottom: 20px;
     right: 20px;
@@ -89,6 +90,10 @@ button {
   cursor: pointer;
 }
 
+#toc-list {
+  padding-left: 42px;
+}
+
 ol, ul {
     font-size: 20px;
     line-height: 24px;
@@ -96,12 +101,25 @@ ol, ul {
     list-style-type: none;
 }
 
-ul > li {
+ol {
+  list-style-type: decimal;
+}
+
+ul > li,
+ol > li {
     font-weight: bold;
 }
 
 ul.bullet > li {
     list-style: square outside none;
+}
+
+ol > li {
+  list-style: decimal outside none;
+}
+
+ol li li {
+  list-style-type: decimal;
 }
 
 li {

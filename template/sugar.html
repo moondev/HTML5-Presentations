@@ -23,7 +23,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
-        <title>Skookum Digital Works | Sugar Daddy - A Javascript library for working with native objects</title>
+        <title>Skookum Digital Works | Sugar.JS - A Javascript library for working with native objects</title>
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
         <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono" rel="stylesheet" type="text/css" />
@@ -97,7 +97,7 @@
             <div class="slide" id="table-of-contents">
                 <header><h1>Table of Contents</h1></header>
                 <section>
-                    <ul id="toc-list"></ul>
+                    <ol id="toc-list"></ul>
                 </section>
             </div>
 
@@ -241,7 +241,8 @@
                         </li>
                         <li>
                             <div class="heading"><code>decodeBase64()</code></div>
-                            <span class="smaller">Decodes the string from base64 encoding.</span>
+                            <span class="smaller">Decodes the string from base64 encoding.
+                            <a href="#" class="exampleCode" data-id="string_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>each(search, fn)</code></div>
@@ -249,7 +250,8 @@
                         </li>
                         <li>
                             <div class="heading"><code>encodeBase64</code></div>
-                            <span class="smaller">Encodes the string into base64 encoding.</span>
+                            <span class="smaller">Encodes the string into base64 encoding.
+                            <a href="#" class="exampleCode" data-id="string_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>endsWith(find, caseSensitive = true)</code></div>
@@ -268,7 +270,8 @@
                     <ul>
                         <li>
                             <div class="heading"><code>escapeRegExp()</code></div>
-                            <span class="smaller">Escapes all RegExp tokens in the string.</span>
+                            <span class="smaller">Escapes all RegExp tokens in the string.
+                            <a href="#" class="exampleCode" data-id="string_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>escapeURL(param = false)</code></div>
@@ -293,7 +296,8 @@
                         <li>
                             <div class="heading"><code>has(find)</code></div>
                             <span class="smaller">Returns true if the string matches <code>find</code> where <code>find</code>
-                            may be a RegExp or string.</span>
+                            may be a RegExp or string.
+                            <a href="#" class="exampleCode" data-id="string_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>hiragana(all = true)</code></div>
@@ -318,7 +322,8 @@
                         </li>
                         <li>
                             <div class="heading"><code>lines(fn)</code></div>
-                            <span class="smaller">Runs callback <code>fn</code> against each line in the string. Returns an array of lines.</span>
+                            <span class="smaller">Runs callback <code>fn</code> against each line in the string. Returns an array of lines.
+                            <a href="#" class="exampleCode" data-id="string_page">example</a></span>
                         </li>
                     </ul>
                 </section>
@@ -334,7 +339,7 @@
                         <li>
                             <div class="heading"><code>normalize()</code></div>
                             <span class="smaller">Returns the string with accented and non-standard Latin-based characters converted into
-                            standard letters.</span>
+                            standard letters. <a href="#" class="exampleCode" data-id="string_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>pad(num = 0, padding = '')</code></div>
@@ -352,9 +357,16 @@
                             on each side and <code>padding</code> is the character to pad with.</span>
                         </li>
                         <li>
+                            <div class="heading"><code>paragraphs(fn)</code></div>
+                            <span class="smaller">Runs callback <code>fn</code>
+                            against each paragraph in the string. Returns an array
+                            of paragraphs. <a href="#" class="exampleCode" data-id="string_page">example</a></span>
+                        </li>
+                        <li>
                             <div class="heading"><code>removeTags(tag1, tag2, ...)</code></div>
                             <span class="smaller">Removes all HTML tags and their contents from the string. No arguments
-                            will remove all tags and nested content.</span>
+                            will remove all tags and nested content.
+                            <a href="#" class="exampleCode" data-id="string_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>repeat(num = 0)</code></div>
@@ -372,11 +384,8 @@
                         <li>
                             <div class="heading"><code>stripTags(tag12, tag2, ...)</code></div>
                             <span class="smaller">Strips all HTML tags from the string. Unlike <code>removeTags()</code>,
-                            all child text remains intact.</span>
-                        </li>
-                        <li>
-                            <div class="heading"><code>titleize()</code></div>
-                            <span class="smaller">Capitalizes all first letters.</span>
+                            all child text remains intact.
+                            <a href="#" class="exampleCode" data-id="string_page">example</a></span>
                         </li>
                     </ul>
                 </section>
@@ -390,22 +399,29 @@
                 <section>
                     <ul>
                         <li>
+                            <div class="heading"><code>titleize()</code></div>
+                            <span class="smaller">Capitalizes all first letters.</span>
+                        </li>
+                        <li>
                             <div class="heading"><code>to(index = end)</code></div>
                             <span class="smaller">Returns a section of the string ending at <code>index</code>.</span>
                         </li>
                         <li>
                             <div class="heading"><code>toDate()</code></div>
-                            <span class="smaller">Creates a date from the given string.</span>
+                            <span class="smaller">Creates a date from the given string.
+                            <a href="#" class="exampleCode" data-id="string_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>toNumber(base = 10)</code></div>
                             <span class="smaller">Convers the string into a number. Any value with a "."
-                            fill is converted to floating point, otherwise int.</span>
+                            fill is converted to floating point, otherwise int.
+                            <a href="#" class="exampleCode" data-id="string_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>toObject(sep1, sep2)</code></div>
                             <span class="smaller">Converts a string into an object. String could be formatted
-                            as URL GET parameters or piped and comma delimited.</span>
+                            as URL GET parameters or piped and comma delimited.
+                            <a href="#" class="exampleCode" data-id="string_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>trim()</code></div>
@@ -455,7 +471,8 @@
                             <div class="heading"><code>Number.random(n1, n2)</code></div>
                             <span class="smaller">Returns a random integer between <code>n1</code> and <code>n2</code>.
                             If only 1 number is passed, the other will be 0.
-                            If none are passed, the number will be either 0 or 1.</span>
+                            If none are passed, the number will be either 0 or 1.
+                            <a href="#" class="exampleCode" data-id="number_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>abs()</code></div>
@@ -483,7 +500,8 @@
                             <span class="smaller">Returns a date <em>n</em> days after <code>d</code>,
                             where <em>n</em> is the integer. <code>d</code> will
                             accept a date object, timestamp, text format, <code>dayAfter()</code>,
-                            or <code>dayFromNow()</code>. <code>d</code> defaults to <em>now</em>.</span>
+                            or <code>dayFromNow()</code>. <code>d</code> defaults to <em>now</em>.
+                            <a href="#" class="exampleCode" data-id="number_page">example</a></span>
 
                             <span class="smaller">Similar handling also applies to <code>hoursAfter()</code>,
                             <code>millisecondsAfter()</code>, <code>minutesAfter()</code>,
@@ -557,7 +575,8 @@
                             <div class="heading"><code>format(comma, period)</code></div>
                             <span class="smaller">Formats the number to a readable string. <code>comma</code>
                             is the character used for the thousands separator.
-                            <code>period</code> is the character used for the decimal point.</span>
+                            <code>period</code> is the character used for the decimal point.
+                            <a href="#" class="exampleCode" data-id="number_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>hex()</code></div>
@@ -584,11 +603,13 @@
                     <ul>
                         <li>
                             <div class="heading"><code>isOdd()</code></div>
-                            <span class="smaller">Returns true if the number is odd.</span>
+                            <span class="smaller">Returns true if the number is odd.
+                            <a href="#" class="exampleCode" data-id="number_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>ordinalize()</code></div>
-                            <span class="smaller">Returns an ordinalized (English) string, i.e. "1st", "2nd", etc.</span>
+                            <span class="smaller">Returns an ordinalized (English) string, i.e. "1st", "2nd", etc.
+                            <a href="#" class="exampleCode" data-id="number_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>pad(place = 0, sign = false)</code></div>
@@ -605,7 +626,8 @@
                         </li>
                         <li>
                             <div class="heading"><code>times(n)</code></div>
-                            <span class="smaller">Calls <code>fn</code> a number of times equivalent to the number.</span>
+                            <span class="smaller">Calls <code>fn</code> a number of times equivalent to the number.
+                            <a href="#" class="exampleCode" data-id="number_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>toNumber()</code></div>
@@ -634,7 +656,8 @@
                             is specified, it will add at <code>index</code>, otherwise
                             adds to the end of the array. Behaves like concat in that
                             if <code>el</code> is an array it will be joined, not inserted.
-                            This method will change the array! <em>Use include for a non-destructive alias.</em></span>
+                            This method will change the array! <em>Use include for a non-destructive alias.</em>
+                            <a href="#" class="exampleCode" data-id="array_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>all()</code></div>
@@ -650,13 +673,14 @@
                             <code>loop</code> is true, overshooting the end of the array
                             (or the beginning) will begin counting from the other end.
                             Also accepts passing multiple indexes will get the
-                            elements at those indexes. Returns <em>mixed</em>.</span>
+                            elements at those indexes. Returns <em>mixed</em>.
+                            <a href="#" class="exampleCode" data-id="array_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>average(map)</code></div>
                             <span class="smaller">Averages all values in the array. <code>map</code> may be a
                             function mapping the value to be averaged or a string acting
-                            as a shortcut.</span>
+                            as a shortcut. <a href="#" class="exampleCode" data-id="array_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>clone()</code></div>
@@ -670,7 +694,7 @@
                             <div class="heading"><code>compact()</code></div>
                             <span class="smaller">Removes all instances of <code>undefined</code>, <code>null</code>,
                             and <code>NaN</code> from the array. Empty strings and
-                            <code>false</code> are left untouched.</span>
+                            <code>false</code> are left untouched. <a href="#" class="exampleCode" data-id="array_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>count(f)</code></div>
@@ -712,7 +736,7 @@
                             <div class="heading"><code>exclude(f)</code></div>
                             <span class="smaller">Removes any element in the array that matches <code>f</code>. This is a
                             non-destructive alias for <code>remove()</code>. It will not change the
-                            original array.</span>
+                            original array. <a href="#" class="exampleCode" data-id="array_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>filter(f, scope)</code></div>
@@ -720,21 +744,22 @@
                             <code>scope</code> is the <code>this</code> object. In addition to providing this
                             method for browsers that don't support it natively, this
                             enhanced method also directly accepts strings, numbers,
-                            deep objects, and arrays for <code>f</code>.</span>
+                            deep objects, and arrays for <code>f</code>.
+                            <a href="#" class="exampleCode" data-id="array_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>find(f, index = 0, scope = false)</code></div>
                             <span class="smaller">Returns the first element that matches <code>f</code>. <code>f</code> will match a
                             string, number, array, object, or alternately test against a
                             function or regex. Starts at <code>index</code>, and will continue from
-                            index = 0 if <code>loop</code> is true.</span>
+                            index = 0 if <code>loop</code> is true. <a href="#" class="exampleCode" data-id="array_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>findAll(f, index = 0, scope = false)</code></div>
                             <span class="smaller">Returns all elements that match <code>f</code>. <code>f</code> will match a
                             string, number, array, object, or alternately test against a
                             function or regex. Starts at <code>index</code>, and will continue from
-                            index = 0 if <code>loop</code> is true.</span>
+                            index = 0 if <code>loop</code> is true. <a href="#" class="exampleCode" data-id="array_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>first(num = 1)</code></div>
@@ -771,7 +796,7 @@
                             <div class="heading"><code>groupBy(property)</code></div>
                             <span class="smaller">Groups the array by <code>property</code>. Will return an object with
                             keys equal to the grouped values. <code>property</code> may be a mapping
-                            function, or a string acting as a shortcut.</span>
+                            function, or a string acting as a shortcut. <a href="#" class="exampleCode" data-id="array_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>has()</code></div>
@@ -781,7 +806,7 @@
                             <div class="heading"><code>inGroups(num, padding)</code></div>
                             <span class="smaller">Groups the array into <code>num</code> arrays. <code>padding</code> specifies a
                             value with which to pad the last array so that they are
-                            all equal length.</span>
+                            all equal length. <a href="#" class="exampleCode" data-id="array_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>inGroupsOf(num, padding = null)</code></div>
@@ -802,7 +827,7 @@
                             providing this method for browsers that don't support it
                             natively, this enhanced method can also perform deep finds
                             on objects or arrays, and accept an iterating function on
-                            which to perform the search.</span>
+                            which to perform the search. <a href="#" class="exampleCode" data-id="array_page">example</a></span>
                         </li>
                     </ul>
                 </section>
@@ -858,13 +883,15 @@
                             browsers that don't support it natively, this enhanced
                             method also directly accepts a string, which is a shortcut
                             for a function that gets that property on each element.
-                            <code>collect()</code> is provided as an alias.</span>
+                            <code>collect()</code> is provided as an alias.
+                            <a href="#" class="exampleCode" data-id="array_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>max(map)</code></div>
                             <span class="smaller">Returns the elements in the array with the greatest value.
                             <code>map</code> may be a function mapping the value to be checked or a
-                            string acting as a shortcut.</span>
+                            string acting as a shortcut.
+                            <a href="#" class="exampleCode" data-id="array_page">example</a></span>
                         </li>
                     </ul>
                 </section>
@@ -887,7 +914,8 @@
                             <div class="heading"><code>most(map)</code></div>
                             <span class="smaller">Returns the elements in the array with the most commonly
                             occuring value. <code>map</code> may be a function mapping the value to
-                            be checked or a string acting as a shortcut.</span>
+                            be checked or a string acting as a shortcut.
+                            <a href="#" class="exampleCode" data-id="array_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>none(f)</code></div>
@@ -967,7 +995,8 @@
                             <div class="heading"><code>sortBy(property, desc = false)</code></div>
                             <span class="smaller">Sorts the array by <code>property</code>. <code>property</code> may be a function or
                             a string acting as a shortcut. <code>desc</code> will sort the array in
-                            descending order.</span>
+                            descending order.
+                            <a href="#" class="exampleCode" data-id="array_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>split(f)</code></div>
@@ -983,7 +1012,8 @@
                         <li>
                             <div class="heading"><code>sum(map)</code></div>
                             <span class="smaller">Sums all values in the array. <code>map</code> may be a function mapping
-                            the value to be summed or a string acting as a shortcut.</span>
+                            the value to be summed or a string acting as a shortcut.
+                            <a href="#" class="exampleCode" data-id="array_page">example</a></span>
                         </li>
                     </ul>
                 </section>
@@ -1025,7 +1055,8 @@
                             formats. Accepts a multitude of text formats, a timestamp,
                             or another date as <code>d</code>. If no argument is given, date is assumed to
                             be now. Date.create additionally can accept enumerated
-                            parameters as with the standard date constructor.</span>
+                            parameters as with the standard date constructor.
+                            <a href="#" class="exampleCode" data-id="date_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>addDays(num)</code></div>
@@ -1040,14 +1071,16 @@
                             <div class="heading"><code>advance(param)</code></div>
                             <span class="smaller">Sets the date forward. <code>param</code> can accept multiple
                             formats including a single number as a timestamp, an object,
-                            or enumerated parameters (as with the Date constructor).</span>
+                            or enumerated parameters (as with the Date constructor).
+                            <a href="#" class="exampleCode" data-id="date_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>beginningOfDay()</code></div>
                             <span class="smaller">Sets the date to the beginning of the day.</span>
 
                             <span class="smaller">Similar handling also applies to <code>beginningOfMonth()</code>,
-                            <code>beginningOfWeek()</code>, and <code>beginningOfYear()</code>.</span>
+                            <code>beginningOfWeek()</code>, and <code>beginningOfYear()</code>.
+                            <a href="#" class="exampleCode" data-id="date_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>clone()</code></div>
@@ -1074,6 +1107,7 @@
                         <li>
                             <div class="heading"><code>daysInMonth()</code></div>
                             <span class="smaller">Returns the number of days in the date's month.
+                            <a href="#" class="exampleCode" data-id="date_page">example</a></span>
                         </li>
                     </ul>
                 </section>
@@ -1118,16 +1152,19 @@
                             also be 'relative', which will construct a relative,
                             unit-adjusted offset to the current time. A function may
                             also be passed here to allow more localization and more
-                            granular control. <code>relative()</code> is provided as an alias.</span>
+                            granular control. <code>relative()</code> is provided as an alias.
+                            <a href="#" class="exampleCode" data-id="date_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>getUTCOffset(iso)</code></div>
                             <span class="smaller">Returns a string representation of the offset from UTC time.
                             If <code>iso</code> is true the offset will be in ISO8601 format.
+                            <a href="#" class="exampleCode" data-id="date_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>getUTCWeek()</code></div>
-                            <span class="smaller">Gets the date's week (of the year) according to universal time.</span>
+                            <span class="smaller">Gets the date's week (of the year) according to universal time.
+                            <a href="#" class="exampleCode" data-id="date_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>getUTCWeekday()</code></div>
@@ -1159,27 +1196,31 @@
                             timestamp, or text format. If not specified, <code>d</code> is assumed
                             to be <em>now</em>. is additionally understands more generalized
                             expressions like month/weekday names, 'today', etc. Dates
-                            will be compared to the precision implied in <code>d</code>.</span>
+                            will be compared to the precision implied in <code>d</code>.
+                            <a href="#" class="exampleCode" data-id="date_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>isAfter(d, margin)</code></div>
                             <span class="smaller">Returns true if the date is after the <code>d</code>. <code>margin</code> is to
                             allow extra margin of error (in ms). <code>d</code> will accept a date
                             object, timestamp, or text format. If not specified, <code>d</code> is
-                            assumed to be <em>now</em>.</span>
+                            assumed to be <em>now</em>.
+                            <a href="#" class="exampleCode" data-id="date_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>isBefore(d, margin)</code></div>
                             <span class="smaller">Returns true if the date is before <code>d</code>. <code>margin</code> is to allow
                             extra margin of error (in ms). <code>d</code> will accept a date object,
-                            timestamp, or text format. If not specified, <code>d</code> is assumed to be <em>now</em>.</span>
+                            timestamp, or text format. If not specified, <code>d</code> is assumed to be <em>now</em>.
+                            <a href="#" class="exampleCode" data-id="date_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>isBetween(d1, d2, margin)</code></div>
                             <span class="smaller">Returns true if the date falls between <code>d1</code> and <code>d2</code>. <code>margin</code>
                             is to allow extra margin of error (in ms). <code>d1</code> and <code>d2</code> will
                             accept a date object, timestamp, or text format.
-                            If not specified, they are assumed to be <em>now</em>.</span>
+                            If not specified, they are assumed to be <em>now</em>.
+                            <a href="#" class="exampleCode" data-id="date_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>isFuture()</code></div>
@@ -1191,15 +1232,18 @@
                             <code>isNextWeek()</code>, <code>isNextYear()</code>,
                             <code>isPast()</code>, <code>isThisMonth()</code>,
                             <code>isThisWeek()</code>, <code>isThisYear()</code>,
-                            <code>isToday()</code>, <code>isTomorrow()</code>.</span>
+                            <code>isToday()</code>, <code>isTomorrow()</code>.
+                            <a href="#" class="exampleCode" data-id="date_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>isUTC()</code></div>
-                            <span class="smaller">Returns true if the date has no timezone offset.</span>
+                            <span class="smaller">Returns true if the date has no timezone offset.
+                            <a href="#" class="exampleCode" data-id="date_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>isValid()</code></div>
-                            <span class="smaller">Returns true if the date is valid.</span>
+                            <span class="smaller">Returns true if the date is valid.
+                            <a href="#" class="exampleCode" data-id="date_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>iso()</code></div>
@@ -1223,11 +1267,12 @@
                             string. <code>fn</code> is passed 4 arguments: the adjusted value,
                             adjusted unit, offset in milliseconds, and dir, which is
                             -1 if the string is in the past and 1 if it is in the
-                            future.</span>
+                            future. <a href="#" class="exampleCode" data-id="date_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>resetTime()</code></div>
-                            <span class="smaller">Resets the time in the date to 00:00:00.000.</span>
+                            <span class="smaller">Resets the time in the date to 00:00:00.000.
+                            <a href="#" class="exampleCode" data-id="date_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>rewind(param)</code></div>
@@ -1280,13 +1325,15 @@
                     <ul>
                         <li>
                             <div class="heading"><code>Object.clone(obj = {})</code></div>
-                            <span class="smaller">Creates a deep clone (copy) of <code>obj</code>.</span>
+                            <span class="smaller">Creates a deep clone (copy) of <code>obj</code>.
+                            <a href="#" class="exampleCode" data-id="object_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>Object.create(obj = {})</code></div>
                             <span class="smaller">Creates a new object. This is equivalent to the standard
                             Object constructor <code>new Object()</code> but
-                            additionally returns an object with extended hash methods.</span>
+                            additionally returns an object with extended hash methods.
+                            <a href="#" class="exampleCode" data-id="object_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>Object.each(obj, fn)</code></div>
@@ -1299,39 +1346,48 @@
                         </li>
                         <li>
                             <div class="heading"><code>Object.isArray()</code></div>
-                            <span class="smaller">Returns true if <code>obj</code> is an Array.</span>
+                            <span class="smaller">Returns true if <code>obj</code> is an Array.
+                            <a href="#" class="exampleCode" data-id="object_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>Object.isBoolean(obj)</code></div>
-                            <span class="smaller">Returns true if <code>obj</code> is an Boolean.</span>
+                            <span class="smaller">Returns true if <code>obj</code> is an Boolean.
+                            <a href="#" class="exampleCode" data-id="object_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>Object.isDate(obj)</code></div>
-                            <span class="smaller">Returns true if <code>obj</code> is a Date.</span>
+                            <span class="smaller">Returns true if <code>obj</code> is a Date.
+                            <a href="#" class="exampleCode" data-id="object_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>Object.isEmpty(obj)</code></div>
-                            <span class="smaller">Returns true if <code>obj</code> is empty.</span>
+                            <span class="smaller">Returns true if <code>obj</code> is empty.
+                            <a href="#" class="exampleCode" data-id="object_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>Object.isFunction(obj)</code></div>
-                            <span class="smaller">Returns true if <code>obj</code> is a function.</span>
+                            <span class="smaller">Returns true if <code>obj</code> is a function.
+                            <a href="#" class="exampleCode" data-id="object_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>Object.isNumber(obj)</code></div>
-                            <span class="smaller">Returns true if <code>obj</code> is a number.</span>
+                            <span class="smaller">Returns true if <code>obj</code> is a number.
+                            <a href="#" class="exampleCode" data-id="object_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>Object.isObject(obj)</code></div>
-                            <span class="smaller">Returns true if <code>obj</code> is an object.</span>
+                            <span class="smaller">Returns true if <code>obj</code> is an object.
+                            <a href="#" class="exampleCode" data-id="object_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>Object.isRegExp(obj)</code></div>
-                            <span class="smaller">Returns true if <code>obj</code> is a regular expression.</span>
+                            <span class="smaller">Returns true if <code>obj</code> is a regular expression.
+                            <a href="#" class="exampleCode" data-id="object_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>Object.isString(obj)</code></div>
-                            <span class="smaller">Returns true if <code>obj</code> is a string.</span>
+                            <span class="smaller">Returns true if <code>obj</code> is a string.
+                            <a href="#" class="exampleCode" data-id="object_page">example</a></span>
                         </li>
                     </ul>
                 </section>
@@ -1346,17 +1402,20 @@
                         <li>
                             <div class="heading"><code>Object.keys(obj, fn)</code></div>
                             <span class="smaller">Returns an array containing the keys in <code>obj</code>.
-                            Optionally calls <code>fn</code> for each key.</span>
+                            Optionally calls <code>fn</code> for each key.
+                            <a href="#" class="exampleCode" data-id="object_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>Object.merge(obj1, obj2, ...)</code></div>
                             <span class="smaller">Accepts an arbitrary number of objects as arguments and
                             merges them all into <code>obj1</code>.
+                            <a href="#" class="exampleCode" data-id="object_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>Object.values(obj, fn)</code></div>
                             <span class="smaller">Returns an array containing the values in <code>obj</code>.
-                            Optionally calls <code>fn</code> for each value.</span>
+                            Optionally calls <code>fn</code> for each value.
+                            <a href="#" class="exampleCode" data-id="object_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>clone()</code></div>
@@ -1366,7 +1425,8 @@
                             <div class="heading"><code>each(fn)</code></div>
                             <span class="smaller">Iterates over each property in the object calling <code>fn</code> on
                             each iteration. <em>This method is only available on objects
-                            created with the alternate constructor <code>Object.create()</code></em>.</span>
+                            created with the alternate constructor <code>Object.create()</code></em>.
+                            <a href="#" class="exampleCode" data-id="object_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>equals(obj)</code></div>
@@ -1439,26 +1499,28 @@
                             <code>throttle</code>, you can space the function execution out to
                             prevent thread blocking. Playing with this number is
                             the easiest way to strike a balance for heavier
-                            operations.</span>
+                            operations.
+                            <a href="#" class="exampleCode" data-id="function_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>bind(scope, arg1, arg2, ...)</code></div>
                             <span class="smaller">Binds <code>scope</code> as the <em>this</em> object for
                             the function when it is called. Also allows currying an
                             unlimited number of parameters.
+                            <a href="#" class="exampleCode" data-id="function_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>cancel()</code></div>
                             <span class="smaller">Cancels a function scheduled to be called with <code>delay()</code>.
                             <em>Note: This method won't work when using certain other
                             frameworks like Prototype, as they will retain their delay
-                            method.</em></span>
+                            method.</em> <a href="#" class="exampleCode" data-id="function_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>defer(arg1, arg2, ...)</code></div>
                             <span class="smaller">Defers the function to be called after the stack is empty
                             <em>(i.e. the CPU becomes idle)</em>. Defer can also
-                            curry arguments passed in.</span>
+                            curry arguments passed in. <a href="#" class="exampleCode" data-id="function_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>delay(duration, arg1, arg2, ...)</code></div>
@@ -1466,7 +1528,8 @@
                             the timer to be used with <code>clearTimeout()</code>. In addition to
                             the timer returned, functions using the delay method can
                             be canceled using the <code>cancel()</code> method. Can also curry
-                            arguments passed in after the <code>duration</code>.</span>
+                            arguments passed in after the <code>duration</code>.
+                            <a href="#" class="exampleCode" data-id="function_page">example</a></span>
                         </li>
                     </ul>
                 </section>
@@ -1481,19 +1544,23 @@
                     <ul>
                         <li>
                             <div class="heading"><code>RegExp.escape(str)</code></div>
-                            <span class="smaller">Escapes all RegExp tokens in a string.</span>
+                            <span class="smaller">Escapes all RegExp tokens in a string.
+                            <a href="#" class="exampleCode" data-id="regexp_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>addFlag(flag)</code>
-                            <span class="smaller">Adds the flag <code>flag</code> <em>(i.e. g, i, s)</em> to the regex.</span>
+                            <span class="smaller">Adds the flag <code>flag</code> <em>(i.e. g, i, s)</em> to the regex.
+                            <a href="#" class="exampleCode" data-id="regexp_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>removeFlag(flag)</code></div>
-                            <span class="smaller">Removes the flag <code>flag</code> <em>(i.e. g, i, s)</em> to the regex.</span>
+                            <span class="smaller">Removes the flag <code>flag</code> <em>(i.e. g, i, s)</em> to the regex.
+                            <a href="#" class="exampleCode" data-id="regexp_page">example</a></span>
                         </li>
                         <li>
                             <div class="heading"><code>setFlags(flags)</code></div>
-                            <span class="smaller">Sets the flags <code>flags</code> on the regex and returns a copy.</span>
+                            <span class="smaller">Sets the flags <code>flags</code> on the regex and returns a copy.
+                            <a href="#" class="exampleCode" data-id="regexp_page">example</a></span>
                         </li>
                     </ul>
                 </section>
@@ -1560,10 +1627,13 @@ return 'Returned ' + users.length + ' Skookum team members with a total of ' + t
             <div class="slide transitionSlide" id="formula-outro-slide">
               <section class="middle formula">
                 <header><h1>Credits</h1></header>
-                <p class="resource-link">
-                    <a href="http://slides.html5rocks.com">http://slides.html5rocks.com</a>
-                    <a href="http://www.html5rocks.com">http://www.html5rocks.com</a>
-                </p>
+                <ul class="bullet">
+                    <li><a href="http://sugarjs.com" target="_blank">Sugar JS</a></li>
+                    <li><a href="http://sugarjs.com/dates" target="_blank">Sugar JS Date Documentation</a></li>
+                    <li><a href="https://github.com/andrewplummer/Sugar" target="_blank">Sugar JS on Github</a></li>
+                    <li><a href="http://ejohn.org/blog/how-javascript-timers-work/" target="_blank">John Resig - How Javascript Timers Work</a></li>
+                    <li><a href="http://www.html5rocks.com" target="_blank">HTML5 Rocks - For the sexy presentation</a></li>
+                </ul>
               </section>
             </div>
 
@@ -1619,7 +1689,7 @@ return 'Returned ' + users.length + ' Skookum team members with a total of ' + t
 
     <!-- CODE EXAMPLES -->
     <div id="string_page_example" class="hidden">
-        <h2>String Methods - Page 1 Examples</h2>
+        <h2>String Methods - Noteworthy Examples</h2>
 <pre class="sh_javascript">
 // remove extra spacing from a string
 'too \n much \n space'.compact()
@@ -1662,6 +1732,248 @@ var found = 'the quick brown fox'.has('quick');
         <div class="example" id="string_page_output"></div>
     </div>
 
+    <!-- number example page -->
+    <div id="number_page_example" class="hidden">
+        <h2>Number Methods - Noteworthy Examples</h2>
+<pre class="sh_javascript">
+// return a random number between the two inputs
+Number.random(0, 1337);
+
+// when is one week from today? (alias for daysAfter)
+(7).daysFromNow();
+
+// pretty format a number by specifying the separators
+(13371337).format(',', '.');
+
+// easier alternating checks in loops
+if (i.isOdd());
+
+// add some ordinalization to a string (rankings, dates?)
+(22).ordinalize();
+
+// call a function N number of times
+(2).times(function(i) { console.log(i); });
+</pre>
+        Output:
+        <div class="example" id="number_page_output"></div>
+    </div>
+
+    <!-- number example page -->
+    <div id="array_page_example" class="hidden">
+        <h2>Array Methods - Noteworthy Examples</h2>
+<pre class="sh_javascript">
+// add an element to an existing array at a given index (concats arrays)
+[1,3,3,7].add('sauce');
+[1,3,3,7].add(['s','a','u','c','e']);
+
+// retrieve elements at negative indexes in an array
+[1,2,3,4].at(-1);
+
+// average all values in an array (can be mapped)
+[1,3,3,7].average();
+[{number:1},{number:3},{number:3},{number:7}].average(function(n) { return n.number });
+
+// remove instances of undefined, null, NaN
+[1,null,3,undefined,3,null,7].compact();
+
+// exclude elements from an array (does not change original array)
+[1,3,3,7].exclude(3);
+
+// filter elements of an array by a given callback
+[1,3,3,7].filter(function(n) { return n > 3 || n < 3 });
+
+// find the first matching element
+[{id:1, foo:bar}, {fizz:buzz}].find(function(n) { return typeof n['id'] != 'undefined' });
+['all', 'go', 'bar', 'crawl'].find(/^a/);
+
+// find all matching elements
+['all', 'go', 'bar', 'crawl'].findAll(/^a/);
+
+// group an array by one of it's properties (i.e. by it's unique identifier)
+[{id:27,name:'Guy'},{id:3,name:'Buddy'},{id:14,name:'Joe'}].groupBy(function(n) { return n.id });
+
+// split an array into a multi-dimensional array of N groups
+[1,2,3,4,5,6,7].inGroups(3);
+[1,2,3,4,5,6,7].inGroups(3, null);
+
+// deep finding of objects or arrays
+[{person: {id:1}}, {person: {id:2}}].indexOf(function(n) { return n.person.id == 1 });
+
+// overloaded map function can take a string referencing a property
+['one','three','three','seven'].map('length');
+
+// return the element(s) in the array ordered by greatest value (can stake string referencing property)
+[2,27,19,14,5,27,5].max();
+['one','two','three','seven'].max('length');
+
+// returns the element(s) with the most commonly occuring value
+[2,27,19,14,5,27,5].most();
+
+// sort an array by a given property or callback function (asc/desc)
+['a','world','gone','mad'].sortBy('length');
+[{id:27,name:'Guy'},{id:3,name:'Buddy'},{id:14,name:'Joe'}].sortBy(function(n) { return n.id });
+
+// sum all values in the array with optional mapping function or property shortcut
+[{age:10},{age:20},{age:30},{age:40}].sum('age');
+
+// remove duplicates from an array
+[1,3,3,7].unique();
+</pre>
+        Output:
+        <div class="example" id="array_page_output"></div>
+    </div>
+
+    <!-- number example page -->
+    <div id="date_page_example" class="hidden">
+        <h2>Date Methods - Noteworthy Examples</h2>
+<pre class="sh_javascript">
+// create dates from nearly any possible format
+Date.create('July');
+Date.create('today');
+Date.create('next thursday');
+Date.create((5).hoursAgo());
+
+// add any timeframe to a given date
+Date.create().addDays(5).addHours(2).addMinutes(1);
+Date.create().addMonths(1).addWeeks(3).addSeconds(59).addMilliseconds(40);
+
+// advance a date by a given time specifier or object
+new Date().advance({ year: 2, month: 1, day: 9 });
+
+// reset a date to a particular "beginning"
+Date.create().beginningOfDay().beginningOfMonth();
+
+// get the number of days in the month
+Date.create().daysInMonth();
+
+// format the date into a given format
+// see: http://sugarjs.com/dates
+Date.create().format();
+Date.create('29 days ago').addHours(25).format('relative');
+Date.create().format(Date.RFC1123);
+Date.create().format(Date.RFC1036);
+Date.create().format(Date.ISO8601);
+
+// retrieve all sorts of useful UTC information about a date
+Date.create().getUTCOffset();
+Date.create().getUTCWeek();
+Date.create().isUTC();
+
+// check for a date match with specified margin of error in milliseconds
+Date.create('1 hour ago').is('today');
+
+// check if a given date is before or after another given date, date string, date obj
+new Date().isAfter('tomorrow');
+new Date().isAfter('yesterday');
+new Date().isBefore('tomorrow');
+new Date().isBefore('yesterday');
+
+// check if a date is between two other dates with a margin of error in milliseconds
+new Date().isBetween('yesterday', 'tomorrow');
+
+// check if a date is in the future or past
+Date.create('next friday').isFuture();
+Date.create('next friday').isPast();
+
+// check if a date is a leap year
+new Date().isLeapYear();
+
+// ensure date's are valid
+new Date().isValid();
+
+// get a relative time (1 minute ago) of a given date
+Date.create('90 seconds ago').relative();
+Date.create('January').relative();
+
+// reset a date's time back to 00:00:00.000
+Date.create().resetTime();
+</pre>
+        Output:
+        <div class="example" id="date_page_output"></div>
+    </div>
+
+    <!-- object example page -->
+    <div id="object_page_example" class="hidden">
+        <h2>Object Methods - Noteworthy Examples</h2>
+<pre class="sh_javascript">
+// deep clone objects
+var cloninator = Object.clone({my:awesome:{object:true}});
+
+// create a new object with extended Sugar hash functionality
+Object.create();
+
+// Type checks on objects, yo.
+Object.isArray([]);
+Object.isBoolean(false);
+Object.isDate('nope');
+Object.isEmpty({});
+Object.isFunction(false);
+Object.isNumber('a');
+Object.isObject('boo'); // literal or plain
+Object.isRegExp(/^yourCouch/);
+Object.isString('true');
+
+// get an array containing the object's keys (optional callback on keys)
+Object.keys({ hello: 'world', another: 'key' });
+
+// merge objects into the first object
+Object.merge({a:1},{a:2},{b:3});
+
+// get an array containing the object's key values (optional callback on values)
+Object.values({ hello: 'world', another: 'key' });
+
+// iterate over key/val pairs in an object
+Object.create({ hello: 'world', another: 'key' }).each(function(k, v) {  });
+</pre>
+        Output:
+        <div class="example" id="object_page_output"></div>
+    </div>
+
+    <!-- number example page -->
+    <div id="function_page_example" class="hidden">
+        <h2>Function Methods - Noteworthy Examples</h2>
+<pre class="sh_javascript">
+// create lazy functions for non-blocking async operations, executing on free CPU cycles
+Function.lazy(function() { console.log('hello, world'); });
+[1,2,3].each(Function.lazy(function() {  }, 20));
+
+// binds scope as "this" for the called function, also allows parameter currying
+(function(hello) { return this; }).bind('world')();
+(function() { return this; }).bind(document.getElementById('function_page_output'))();
+
+// defer a function to be called after the stack empties (free CPU cycles)
+// wrapper around delay, so avoid using...
+(function(hello) { console.log(hello); }).defer('world');
+
+// delay a function call for a given duration (i.e., wait before calling)
+(function(hello), { console.log(hello); }).delay(500, 'world');
+
+// cancel a delayed function
+var f = (function() { console.log('oh hai'); });
+f.delay(500);
+f.cancel();
+</pre>
+        Output:
+        <div class="example" id="function_page_output"></div>
+    </div>
+
+    <!-- number example page -->
+    <div id="regexp_page_example" class="hidden">
+        <h2>RegExp Methods - Noteworthy Examples</h2>
+<pre class="sh_javascript">
+// escape RegExp tokens in a string, because I'm lazy!
+var r = new RegExp('&lt;a href="(.*)+"[a-zA-Z0-9]+&gt;'.escapeRegExp());
+
+// add or remove flags from an existing RegExp
+var r = new RegExp('[a-zA-Z0-9]+');
+r.addFlag('g').addFlag('s');
+r.removeFlag('g').removeFlag('s');
+r.setFlags('gim');
+</pre>
+        Output:
+        <div class="example" id="regexp_page_output"></div>
+    </div>
+
     <!-- DON'T TOUCH - HOLDS EXAMPLES -->
     <div id="exampleWindow">
         <a href="#" class="close">x</a>
@@ -1679,6 +1991,7 @@ var found = 'the quick brown fox'.has('quick');
     <!--script src="src/prettify/prettify.js" onload="prettyPrint();" defer></script-->
     <script src="js/excss.js"></script>
     <script src="js/utils.js"></script>
+    <script src="js/sugar-0.9.1.min.js"></script>
     <script src="js/examples.js"></script>
     <script>
     // Check if new appcache is available, load it, and reload page.
